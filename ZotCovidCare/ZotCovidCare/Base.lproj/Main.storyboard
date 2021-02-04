@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zII-qG-3DL">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,12 +31,14 @@
         <!--General-->
         <scene sceneID="rXv-Jt-Bzt">
             <objects>
-                <navigationController id="blG-FG-uoc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="General" id="moe-US-odo"/>
+                <navigationController navigationBarHidden="YES" id="blG-FG-uoc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="General" image="smiley" catalog="system" id="moe-US-odo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LIm-co-w1Y">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6GI-au-KFX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Ker-SF-NVL" kind="relationship" relationship="rootViewController" id="BlU-yS-zBy"/>
                     </connections>
@@ -45,39 +47,112 @@
             </objects>
             <point key="canvasLocation" x="-377" y="600"/>
         </scene>
-        <!--Covid Updates-->
+        <!--General-->
         <scene sceneID="VU4-S0-B9a">
             <objects>
-                <viewController id="Ker-SF-NVL" customClass="ViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ker-SF-NVL" customClass="GeneralViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iK3-Jd-Ipo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-Fd-HZa">
-                                <rect key="frame" x="175" y="216" width="45" height="30"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEm-3O-LLr">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Article"/>
-                                <connections>
-                                    <action selector="didTapButton" destination="Ker-SF-NVL" eventType="touchUpInside" id="B8v-bC-wJD"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-Yt-QMB">
+                                        <rect key="frame" x="0.0" y="19" width="390" height="1000"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Statistics" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7s-Iz-nEB">
+                                                <rect key="frame" x="8" y="0.0" width="240" height="57"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chart_pic" translatesAutoresizingMaskIntoConstraints="NO" id="vHs-nh-gIZ">
+                                                <rect key="frame" x="8" y="106" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="2 910 999 Total Cases" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWD-bK-tEb">
+                                                <rect key="frame" x="8" y="63" width="240" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="682  Total Cases" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iF8-zp-gh4">
+                                                <rect key="frame" x="8" y="242" width="240" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chart_pic" translatesAutoresizingMaskIntoConstraints="NO" id="axp-Fq-nya">
+                                                <rect key="frame" x="8" y="294" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Latest News" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36q-dX-PjQ">
+                                                <rect key="frame" x="8" y="477" width="240" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdC-pX-sCE">
+                                                <rect key="frame" x="276" y="496" width="73" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="View More"/>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="UCI Testing Center Update" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAu-iP-JHH">
+                                                <rect key="frame" x="64" y="628" width="263" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Covid-19 Vaccine Update" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4id-7I-ia3">
+                                                <rect key="frame" x="64" y="570" width="252" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="cFj-lv-Ehq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LMd-Yt-QMB" firstAttribute="top" secondItem="Hd2-vF-qtd" secondAttribute="top" id="8Q2-va-af6"/>
+                                    <constraint firstItem="LMd-Yt-QMB" firstAttribute="trailing" secondItem="Hd2-vF-qtd" secondAttribute="trailing" id="Ie5-xn-gGw"/>
+                                    <constraint firstItem="LMd-Yt-QMB" firstAttribute="width" secondItem="Itg-6R-i8w" secondAttribute="width" id="byR-oJ-sUe"/>
+                                    <constraint firstItem="LMd-Yt-QMB" firstAttribute="leading" secondItem="Hd2-vF-qtd" secondAttribute="leading" id="dqy-VQ-lz3"/>
+                                    <constraint firstItem="LMd-Yt-QMB" firstAttribute="bottom" secondItem="Hd2-vF-qtd" secondAttribute="bottom" id="vnv-6S-1qT"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Hd2-vF-qtd"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Itg-6R-i8w"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDK-Db-Gnn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Covid Updates" id="Iha-9O-UCY"/>
+                    <navigationItem key="navigationItem" title="General" id="Iha-9O-UCY"/>
+                    <size key="freeformSize" width="390" height="1100"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xzl-8I-Ulq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="1295"/>
+            <point key="canvasLocation" x="-378.46153846153845" y="1294.5497630331754"/>
         </scene>
         <!--Map-->
         <scene sceneID="Hdi-U7-Ajp">
             <objects>
-                <navigationController id="2ZB-UW-xSA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="8kx-x2-UcD"/>
+                <navigationController navigationBarHidden="YES" id="2ZB-UW-xSA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="8kx-x2-UcD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjk-HO-4r7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -91,10 +166,9 @@
         <!--My Health-->
         <scene sceneID="B0N-PE-sFo">
             <objects>
-                <navigationController id="QXl-Nc-13E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Health" id="cxB-Tc-ypC"/>
+                <navigationController navigationBarHidden="YES" id="QXl-Nc-13E" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Health" image="heart" catalog="system" id="cxB-Tc-ypC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CUN-PD-aP6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -110,7 +184,7 @@
             <objects>
                 <viewController id="qZN-E3-bfN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aZ3-6u-u8U">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="wFc-0h-kop"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -126,7 +200,7 @@
             <objects>
                 <viewController id="Rup-Uw-Wza" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SqF-f0-JdU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="wDi-hx-RQf"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -140,10 +214,9 @@
         <!--Settings-->
         <scene sceneID="219-vG-IgF">
             <objects>
-                <navigationController id="qqI-Jt-MMC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="AyO-ad-uQA"/>
+                <navigationController navigationBarHidden="YES" id="qqI-Jt-MMC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="questionmark.square" catalog="system" id="AyO-ad-uQA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uyz-D1-8nM">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -159,7 +232,7 @@
             <objects>
                 <viewController id="SjZ-0X-ArR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VIh-ce-qc4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="fT5-SL-dGH"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -172,6 +245,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chart_pic" width="432" height="280"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="questionmark.square" catalog="system" width="128" height="114"/>
+        <image name="smiley" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
