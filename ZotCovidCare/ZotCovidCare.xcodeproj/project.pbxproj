@@ -18,6 +18,7 @@
 		28454E2A25C3D53100269EDC /* ZotCovidCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */; };
 		675A45EF25CB72F800B43803 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A45EE25CB72F800B43803 /* GeneralViewController.swift */; };
 		67681C4325DCB6FB00EB8BFC /* Pods_ZotCovidCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67681C4225DCB6FB00EB8BFC /* Pods_ZotCovidCare.framework */; };
+		67FF6B7925DCC73300662DC6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF6B7825DCC73300662DC6 /* SearchViewController.swift */; };
 		76EFF448894C198C59257100 /* Pods_ZotCovidCare_ZotCovidCareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2909920633184F49184840F5 /* Pods_ZotCovidCare_ZotCovidCareUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		66E5CA26CC96FE4AC247B96A /* Pods-ZotCovidCare-ZotCovidCareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCare-ZotCovidCareUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZotCovidCare-ZotCovidCareUITests/Pods-ZotCovidCare-ZotCovidCareUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		675A45EE25CB72F800B43803 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		67681C4225DCB6FB00EB8BFC /* Pods_ZotCovidCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ZotCovidCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67FF6B7825DCC73300662DC6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8B2B86917F16F82DBF3792D6 /* Pods-ZotCovidCareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCareTests.release.xcconfig"; path = "Target Support Files/Pods-ZotCovidCareTests/Pods-ZotCovidCareTests.release.xcconfig"; sourceTree = "<group>"; };
 		A14162C6E1DC6A4FB386D7AE /* Pods_ZotCovidCareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZotCovidCareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8274E960FF72DF4D3084E7C /* Pods-ZotCovidCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCare.debug.xcconfig"; path = "Target Support Files/Pods-ZotCovidCare/Pods-ZotCovidCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				28454E1225C3D53000269EDC /* LaunchScreen.storyboard */,
 				28454E1525C3D53000269EDC /* Info.plist */,
 				675A45EE25CB72F800B43803 /* GeneralViewController.swift */,
+				67FF6B7825DCC73300662DC6 /* SearchViewController.swift */,
 			);
 			path = ZotCovidCare;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FF6B7925DCC73300662DC6 /* SearchViewController.swift in Sources */,
 				28454E0C25C3D52F00269EDC /* ViewController.swift in Sources */,
 				28454E0825C3D52F00269EDC /* AppDelegate.swift in Sources */,
 				28454E0A25C3D52F00269EDC /* SceneDelegate.swift in Sources */,

@@ -119,7 +119,11 @@ class GeneralViewController: UIViewController {
         
     }
     
+    //Action for View More Button
     
+    @IBAction func ViewMoreButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "SearchSegue", sender: self)
     
-
+    }
+    
 }
