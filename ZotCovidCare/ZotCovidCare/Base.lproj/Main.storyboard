@@ -57,6 +57,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Covid Updates" id="Iha-9O-UCY"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xzl-8I-Ulq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,14 +106,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnI-PA-pu2">
-                                <rect key="frame" x="100" y="308" width="214" height="30"/>
+                                <rect key="frame" x="100" y="264" width="214" height="30"/>
                                 <state key="normal" title="New Checkup"/>
                                 <connections>
                                     <action selector="didTapButtonCheckUp" destination="qZN-E3-bfN" eventType="touchUpInside" id="cEY-NB-lVC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start a new checkup to receive results and feedbacks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFs-kk-afY">
-                                <rect key="frame" x="10" y="159" width="394" height="139"/>
+                                <rect key="frame" x="10" y="115" width="394" height="139"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="139" id="6Rz-FR-gix"/>
                                 </constraints>
@@ -121,14 +122,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCy-VU-LD5">
-                                <rect key="frame" x="20" y="111" width="94.5" height="25"/>
+                                <rect key="frame" x="20" y="67" width="94.5" height="25"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLl-q1-Yq7">
-                                <rect key="frame" x="20" y="391" width="113" height="27"/>
+                                <rect key="frame" x="20" y="347" width="113" height="27"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,6 +175,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Personal Health" id="80V-kk-mxf"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="label" destination="jFs-kk-afY" id="Kzv-gc-Egs"/>
                         <outlet property="tableViewHealth" destination="CCj-lD-LOp" id="W2c-by-iLf"/>
@@ -191,46 +193,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-N5-mAi">
-                                <rect key="frame" x="32" y="478" width="404" height="195"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="195" id="TzT-7J-AJ6"/>
-                                </constraints>
-                            </mapView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-JV-jnc">
-                                <rect key="frame" x="32" y="198" width="404" height="195"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="195" id="Mnt-5L-eVv"/>
-                                </constraints>
-                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-pc-UGE">
-                                <rect key="frame" x="52" y="114" width="150" height="43"/>
+                                <rect key="frame" x="32" y="86" width="350" height="43"/>
                                 <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="tvU-nT-SpW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="tvU-nT-SpW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-N5-mAi">
+                                <rect key="frame" x="32" y="540" width="362" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="227" id="Zwl-c0-HLl"/>
+                                </constraints>
+                            </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-JV-jnc">
+                                <rect key="frame" x="32" y="289" width="362" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="Mnt-5L-eVv"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDi-hx-RQf"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="ZRm-JV-jnc" firstAttribute="leading" secondItem="wDi-hx-RQf" secondAttribute="leading" constant="32" id="43s-NZ-Vws"/>
-                            <constraint firstItem="wDi-hx-RQf" firstAttribute="bottom" secondItem="wI0-N5-mAi" secondAttribute="bottom" constant="152" id="GwM-Hu-FB0"/>
-                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="centerX" secondItem="SqF-f0-JdU" secondAttribute="centerX" id="Hff-p9-Lx2"/>
-                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="top" secondItem="RHP-pc-UGE" secondAttribute="bottom" constant="41" id="Kgg-W1-H6T"/>
-                            <constraint firstItem="RHP-pc-UGE" firstAttribute="top" secondItem="wDi-hx-RQf" secondAttribute="top" constant="26" id="Ni7-aN-nqf"/>
-                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="top" secondItem="SqF-f0-JdU" secondAttribute="top" constant="188" id="PGz-mt-jwo"/>
-                            <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="RHP-pc-UGE" secondAttribute="trailing" constant="266" id="PXt-EN-UWn"/>
-                            <constraint firstItem="RHP-pc-UGE" firstAttribute="leading" secondItem="wDi-hx-RQf" secondAttribute="leading" constant="52" id="aQa-4f-7h0"/>
+                            <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="RHP-pc-UGE" secondAttribute="trailing" constant="32" id="BvM-Je-W7O"/>
+                            <constraint firstItem="wDi-hx-RQf" firstAttribute="bottom" secondItem="wI0-N5-mAi" secondAttribute="bottom" constant="46" id="GwM-Hu-FB0"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="centerX" secondItem="SqF-f0-JdU" secondAttribute="centerX" constant="6" id="Hff-p9-Lx2"/>
+                            <constraint firstItem="RHP-pc-UGE" firstAttribute="top" secondItem="wDi-hx-RQf" secondAttribute="top" constant="42" id="J2C-vi-4Ka"/>
+                            <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RHP-pc-UGE" secondAttribute="trailing" id="PXt-EN-UWn"/>
+                            <constraint firstItem="RHP-pc-UGE" firstAttribute="leading" secondItem="SqF-f0-JdU" secondAttribute="leading" constant="32" id="fJf-2Z-pbG"/>
                             <constraint firstItem="ZRm-JV-jnc" firstAttribute="trailing" secondItem="wI0-N5-mAi" secondAttribute="trailing" id="gJE-wK-foi"/>
-                            <constraint firstItem="wI0-N5-mAi" firstAttribute="top" secondItem="ZRm-JV-jnc" secondAttribute="bottom" constant="85" id="nzx-NB-FzQ"/>
+                            <constraint firstItem="wI0-N5-mAi" firstAttribute="top" secondItem="ZRm-JV-jnc" secondAttribute="bottom" constant="56" id="nzx-NB-FzQ"/>
                             <constraint firstItem="ZRm-JV-jnc" firstAttribute="leading" secondItem="wI0-N5-mAi" secondAttribute="leading" id="pLX-4p-NKI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Covid Map" id="6Am-xC-EaJ"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="ZRm-JV-jnc" id="8NU-a4-36w"/>
                     </connections>
@@ -267,6 +269,7 @@
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="bQr-bZ-cib"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
