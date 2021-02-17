@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,CLLocationManagerDelegate {
+    
+    
 
     
     override func viewDidLoad() {
@@ -21,6 +25,7 @@ class ViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     
 
 }

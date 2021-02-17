@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Rup-Uw-Wza" kind="relationship" relationship="rootViewController" id="yN5-GO-zBN"/>
+                        <segue destination="Rup-Uw-Wza" kind="relationship" relationship="rootViewController" id="5ru-Nl-vF5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPj-Jy-KYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -186,18 +186,58 @@
         <!--Covid Map-->
         <scene sceneID="vSu-sO-74N">
             <objects>
-                <viewController id="Rup-Uw-Wza" customClass="ViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rup-Uw-Wza" customClass="MapViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SqF-f0-JdU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-N5-mAi">
+                                <rect key="frame" x="32" y="478" width="404" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="TzT-7J-AJ6"/>
+                                </constraints>
+                            </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-JV-jnc">
+                                <rect key="frame" x="32" y="198" width="404" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="Mnt-5L-eVv"/>
+                                </constraints>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-pc-UGE">
+                                <rect key="frame" x="52" y="114" width="150" height="43"/>
+                                <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="tvU-nT-SpW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wDi-hx-RQf"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="leading" secondItem="wDi-hx-RQf" secondAttribute="leading" constant="32" id="43s-NZ-Vws"/>
+                            <constraint firstItem="wDi-hx-RQf" firstAttribute="bottom" secondItem="wI0-N5-mAi" secondAttribute="bottom" constant="152" id="GwM-Hu-FB0"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="centerX" secondItem="SqF-f0-JdU" secondAttribute="centerX" id="Hff-p9-Lx2"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="top" secondItem="RHP-pc-UGE" secondAttribute="bottom" constant="41" id="Kgg-W1-H6T"/>
+                            <constraint firstItem="RHP-pc-UGE" firstAttribute="top" secondItem="wDi-hx-RQf" secondAttribute="top" constant="26" id="Ni7-aN-nqf"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="top" secondItem="SqF-f0-JdU" secondAttribute="top" constant="188" id="PGz-mt-jwo"/>
+                            <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="RHP-pc-UGE" secondAttribute="trailing" constant="266" id="PXt-EN-UWn"/>
+                            <constraint firstItem="RHP-pc-UGE" firstAttribute="leading" secondItem="wDi-hx-RQf" secondAttribute="leading" constant="52" id="aQa-4f-7h0"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="trailing" secondItem="wI0-N5-mAi" secondAttribute="trailing" id="gJE-wK-foi"/>
+                            <constraint firstItem="wI0-N5-mAi" firstAttribute="top" secondItem="ZRm-JV-jnc" secondAttribute="bottom" constant="85" id="nzx-NB-FzQ"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="leading" secondItem="wI0-N5-mAi" secondAttribute="leading" id="pLX-4p-NKI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Covid Map" id="6Am-xC-EaJ"/>
+                    <connections>
+                        <outlet property="mapView" destination="ZRm-JV-jnc" id="8NU-a4-36w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhm-U6-EfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167" y="1294"/>
+            <point key="canvasLocation" x="1166.6666666666667" y="1303.7946428571429"/>
         </scene>
         <!--Settings-->
         <scene sceneID="219-vG-IgF">
@@ -230,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="1294"/>
+            <point key="canvasLocation" x="1951" y="1344"/>
         </scene>
         <!--Check Up View Controller-->
         <scene sceneID="1ee-CT-Sia">
