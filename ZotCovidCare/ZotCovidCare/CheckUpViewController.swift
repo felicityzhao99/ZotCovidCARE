@@ -45,7 +45,7 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
     }
     
-    @IBAction func didTabSubmit(){
+    @IBAction func didTapSubmit(){
         completionHandler?(field.text)
         dismiss(animated: true, completion: nil)
     }

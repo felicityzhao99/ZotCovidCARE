@@ -4,12 +4,24 @@
 //
 //  Created by Susie Liu on 2/3/21.
 //
-
 import UIKit
+import HealthKit
+
+//struct ContentView: View{
+//    private var healthStore: HealthStore?
+//    init(){
+//        healthStore = HealthStore()
+//    }
+//}
+
+let healthKitStore:HKHealthStore = HKHealthStore()
 
 class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet var tableViewHealth: UITableView!
-    let healthArr = ["Sleep", "Workout", "Mood"]
+    
+    
+    let healthArr = ["Sleep", "Steps", "Exercise Minutes"]
     
     func tableView(_ tableViewHealth: UITableView, numberOfRowsInSection section: Int) -> Int {
         return healthArr.count
@@ -44,4 +56,8 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         present(vcCheckup,animated: true)
         
     }
+    
+    
+    
+    
 }
