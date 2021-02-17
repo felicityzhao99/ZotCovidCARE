@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E748130FC1D1E5C80F0633E /* Pods_ZotCovidCareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14162C6E1DC6A4FB386D7AE /* Pods_ZotCovidCareTests.framework */; };
 		28454E0825C3D52F00269EDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E0725C3D52F00269EDC /* AppDelegate.swift */; };
 		28454E0A25C3D52F00269EDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E0925C3D52F00269EDC /* SceneDelegate.swift */; };
 		28454E0C25C3D52F00269EDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E0B25C3D52F00269EDC /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 		28454E1F25C3D53100269EDC /* ZotCovidCareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E1E25C3D53100269EDC /* ZotCovidCareTests.swift */; };
 		28454E2A25C3D53100269EDC /* ZotCovidCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */; };
 		675A45EF25CB72F800B43803 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A45EE25CB72F800B43803 /* GeneralViewController.swift */; };
+		67681C4325DCB6FB00EB8BFC /* Pods_ZotCovidCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67681C4225DCB6FB00EB8BFC /* Pods_ZotCovidCare.framework */; };
+		76EFF448894C198C59257100 /* Pods_ZotCovidCare_ZotCovidCareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2909920633184F49184840F5 /* Pods_ZotCovidCare_ZotCovidCareUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		67681C2825DCB36000EB8BFC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		10F9CD99B2458FAF7F18ABC5 /* Pods-ZotCovidCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCare.release.xcconfig"; path = "Target Support Files/Pods-ZotCovidCare/Pods-ZotCovidCare.release.xcconfig"; sourceTree = "<group>"; };
 		28454E0425C3D52F00269EDC /* ZotCovidCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZotCovidCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28454E0725C3D52F00269EDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28454E0925C3D52F00269EDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +67,15 @@
 		28454E2525C3D53100269EDC /* ZotCovidCareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZotCovidCareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZotCovidCareUITests.swift; sourceTree = "<group>"; };
 		28454E2B25C3D53100269EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2909920633184F49184840F5 /* Pods_ZotCovidCare_ZotCovidCareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZotCovidCare_ZotCovidCareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B528D2E0B42A6D1E8236D53 /* Pods-ZotCovidCareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCareTests.debug.xcconfig"; path = "Target Support Files/Pods-ZotCovidCareTests/Pods-ZotCovidCareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		66E5CA26CC96FE4AC247B96A /* Pods-ZotCovidCare-ZotCovidCareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCare-ZotCovidCareUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZotCovidCare-ZotCovidCareUITests/Pods-ZotCovidCare-ZotCovidCareUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		675A45EE25CB72F800B43803 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		67681C4225DCB6FB00EB8BFC /* Pods_ZotCovidCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ZotCovidCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2B86917F16F82DBF3792D6 /* Pods-ZotCovidCareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCareTests.release.xcconfig"; path = "Target Support Files/Pods-ZotCovidCareTests/Pods-ZotCovidCareTests.release.xcconfig"; sourceTree = "<group>"; };
+		A14162C6E1DC6A4FB386D7AE /* Pods_ZotCovidCareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZotCovidCareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8274E960FF72DF4D3084E7C /* Pods-ZotCovidCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCare.debug.xcconfig"; path = "Target Support Files/Pods-ZotCovidCare/Pods-ZotCovidCare.debug.xcconfig"; sourceTree = "<group>"; };
+		F76E2849C796BD2016E94B19 /* Pods-ZotCovidCare-ZotCovidCareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZotCovidCare-ZotCovidCareUITests.release.xcconfig"; path = "Target Support Files/Pods-ZotCovidCare-ZotCovidCareUITests/Pods-ZotCovidCare-ZotCovidCareUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67681C4325DCB6FB00EB8BFC /* Pods_ZotCovidCare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E748130FC1D1E5C80F0633E /* Pods_ZotCovidCareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76EFF448894C198C59257100 /* Pods_ZotCovidCare_ZotCovidCareUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +113,8 @@
 				28454E1D25C3D53100269EDC /* ZotCovidCareTests */,
 				28454E2825C3D53100269EDC /* ZotCovidCareUITests */,
 				28454E0525C3D52F00269EDC /* Products */,
+				AD9A65DB9D377F020A9AD525 /* Pods */,
+				4EFBBB754E26A0C5A16EE5FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +161,29 @@
 			path = ZotCovidCareUITests;
 			sourceTree = "<group>";
 		};
+		4EFBBB754E26A0C5A16EE5FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67681C4225DCB6FB00EB8BFC /* Pods_ZotCovidCare.framework */,
+				2909920633184F49184840F5 /* Pods_ZotCovidCare_ZotCovidCareUITests.framework */,
+				A14162C6E1DC6A4FB386D7AE /* Pods_ZotCovidCareTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD9A65DB9D377F020A9AD525 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8274E960FF72DF4D3084E7C /* Pods-ZotCovidCare.debug.xcconfig */,
+				10F9CD99B2458FAF7F18ABC5 /* Pods-ZotCovidCare.release.xcconfig */,
+				66E5CA26CC96FE4AC247B96A /* Pods-ZotCovidCare-ZotCovidCareUITests.debug.xcconfig */,
+				F76E2849C796BD2016E94B19 /* Pods-ZotCovidCare-ZotCovidCareUITests.release.xcconfig */,
+				4B528D2E0B42A6D1E8236D53 /* Pods-ZotCovidCareTests.debug.xcconfig */,
+				8B2B86917F16F82DBF3792D6 /* Pods-ZotCovidCareTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28454E2E25C3D53100269EDC /* Build configuration list for PBXNativeTarget "ZotCovidCare" */;
 			buildPhases = (
+				4D78694AAD35762D59B70C6E /* [CP] Check Pods Manifest.lock */,
 				28454E0025C3D52F00269EDC /* Sources */,
 				28454E0125C3D52F00269EDC /* Frameworks */,
 				28454E0225C3D52F00269EDC /* Resources */,
+				67681C2825DCB36000EB8BFC /* Embed Frameworks */,
+				C19A20D82392AC56A11ECD26 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28454E3125C3D53100269EDC /* Build configuration list for PBXNativeTarget "ZotCovidCareTests" */;
 			buildPhases = (
+				50E3060E58722A81D60D176E /* [CP] Check Pods Manifest.lock */,
 				28454E1625C3D53100269EDC /* Sources */,
 				28454E1725C3D53100269EDC /* Frameworks */,
 				28454E1825C3D53100269EDC /* Resources */,
@@ -173,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28454E3425C3D53100269EDC /* Build configuration list for PBXNativeTarget "ZotCovidCareUITests" */;
 			buildPhases = (
+				27C5EC781B7BF79580F4998C /* [CP] Check Pods Manifest.lock */,
 				28454E2125C3D53100269EDC /* Sources */,
 				28454E2225C3D53100269EDC /* Frameworks */,
 				28454E2325C3D53100269EDC /* Resources */,
+				AEBBD9C4B6E3FDF828AB6816 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,7 +269,7 @@
 				};
 			};
 			buildConfigurationList = 28454DFF25C3D52F00269EDC /* Build configuration list for PBXProject "ZotCovidCare" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -255,6 +314,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27C5EC781B7BF79580F4998C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZotCovidCare-ZotCovidCareUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D78694AAD35762D59B70C6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZotCovidCare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50E3060E58722A81D60D176E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZotCovidCareTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEBBD9C4B6E3FDF828AB6816 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZotCovidCare-ZotCovidCareUITests/Pods-ZotCovidCare-ZotCovidCareUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZotCovidCare-ZotCovidCareUITests/Pods-ZotCovidCare-ZotCovidCareUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZotCovidCare-ZotCovidCareUITests/Pods-ZotCovidCare-ZotCovidCareUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C19A20D82392AC56A11ECD26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZotCovidCare/Pods-ZotCovidCare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZotCovidCare/Pods-ZotCovidCare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZotCovidCare/Pods-ZotCovidCare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28454E0025C3D52F00269EDC /* Sources */ = {
@@ -437,11 +599,14 @@
 		};
 		28454E2F25C3D53100269EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8274E960FF72DF4D3084E7C /* Pods-ZotCovidCare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X79V5X28PF;
+				DEVELOPMENT_TEAM = RQ5RX56CU3;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ZotCovidCare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,17 +615,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uci.ZotCovidCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		28454E3025C3D53100269EDC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10F9CD99B2458FAF7F18ABC5 /* Pods-ZotCovidCare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X79V5X28PF;
+				DEVELOPMENT_TEAM = RQ5RX56CU3;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ZotCovidCare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -469,12 +637,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uci.ZotCovidCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		28454E3225C3D53100269EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B528D2E0B42A6D1E8236D53 /* Pods-ZotCovidCareTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -497,6 +666,7 @@
 		};
 		28454E3325C3D53100269EDC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B2B86917F16F82DBF3792D6 /* Pods-ZotCovidCareTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +689,7 @@
 		};
 		28454E3525C3D53100269EDC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66E5CA26CC96FE4AC247B96A /* Pods-ZotCovidCare-ZotCovidCareUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +710,7 @@
 		};
 		28454E3625C3D53100269EDC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F76E2849C796BD2016E94B19 /* Pods-ZotCovidCare-ZotCovidCareUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
