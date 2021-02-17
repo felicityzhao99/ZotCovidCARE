@@ -32,10 +32,10 @@
         <!--General-->
         <scene sceneID="rXv-Jt-Bzt">
             <objects>
-                <navigationController id="blG-FG-uoc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="General" id="moe-US-odo"/>
+                <navigationController navigationBarHidden="YES" id="blG-FG-uoc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="General" image="smiley" catalog="system" id="moe-US-odo"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LIm-co-w1Y">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -66,10 +66,10 @@
         <!--Map-->
         <scene sceneID="Hdi-U7-Ajp">
             <objects>
-                <navigationController id="2ZB-UW-xSA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="8kx-x2-UcD"/>
+                <navigationController navigationBarHidden="YES" id="2ZB-UW-xSA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="8kx-x2-UcD"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjk-HO-4r7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -83,10 +83,10 @@
         <!--My Health-->
         <scene sceneID="B0N-PE-sFo">
             <objects>
-                <navigationController id="QXl-Nc-13E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Health" id="cxB-Tc-ypC"/>
+                <navigationController navigationBarHidden="YES" id="QXl-Nc-13E" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Health" image="heart" catalog="system" id="cxB-Tc-ypC"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CUN-PD-aP6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -244,10 +244,10 @@
         <!--Settings-->
         <scene sceneID="219-vG-IgF">
             <objects>
-                <navigationController id="qqI-Jt-MMC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="AyO-ad-uQA"/>
+                <navigationController navigationBarHidden="YES" id="qqI-Jt-MMC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="questionmark.circle" catalog="system" id="AyO-ad-uQA"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uyz-D1-8nM">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -409,6 +409,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <image name="smiley" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
