@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBAction func didTapButton(){
         let vc = UIViewController()
         vc.view.backgroundColor = .red
-        vc.view.textInputMode
         
         navigationController?.pushViewController(vc, animated: true)
     }
