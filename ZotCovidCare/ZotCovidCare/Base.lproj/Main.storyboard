@@ -258,7 +258,7 @@
             </objects>
             <point key="canvasLocation" x="1951" y="600"/>
         </scene>
-        <!--Settings and Privacy-->
+        <!--Settings-->
         <scene sceneID="tbT-Y5-4IQ">
             <objects>
                 <viewController id="SjZ-0X-ArR" customClass="SettingViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
@@ -414,11 +414,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
