@@ -53,23 +53,8 @@
                     <view key="view" contentMode="scaleToFill" id="iK3-Jd-Ipo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-Fd-HZa">
-                                <rect key="frame" x="100" y="188" width="214" height="125"/>
-                                <state key="normal" title="Article"/>
-                                <connections>
-                                    <action selector="didTapButton" destination="Ker-SF-NVL" eventType="touchUpInside" id="B8v-bC-wJD"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wDK-Db-Gnn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="hVx-Fd-HZa" firstAttribute="top" secondItem="wDK-Db-Gnn" secondAttribute="top" constant="100" id="9Zq-lV-ChM"/>
-                            <constraint firstItem="wDK-Db-Gnn" firstAttribute="trailing" secondItem="hVx-Fd-HZa" secondAttribute="trailing" constant="100" id="XC0-FX-fBO"/>
-                            <constraint firstItem="hVx-Fd-HZa" firstAttribute="leading" secondItem="wDK-Db-Gnn" secondAttribute="leading" constant="100" id="jbA-xN-Gcl"/>
-                            <constraint firstItem="wDK-Db-Gnn" firstAttribute="bottom" secondItem="hVx-Fd-HZa" secondAttribute="bottom" constant="500" id="uJt-lU-D9c"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Covid Updates" id="Iha-9O-UCY"/>
                 </viewController>
