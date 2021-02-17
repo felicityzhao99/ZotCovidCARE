@@ -15,6 +15,7 @@
 		28454E1425C3D53000269EDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28454E1225C3D53000269EDC /* LaunchScreen.storyboard */; };
 		28454E1F25C3D53100269EDC /* ZotCovidCareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E1E25C3D53100269EDC /* ZotCovidCareTests.swift */; };
 		28454E2A25C3D53100269EDC /* ZotCovidCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */; };
+		ACD44DC825DCE67B0057898A /* SettingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD44DC725DCE67B0057898A /* SettingPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		28454E2525C3D53100269EDC /* ZotCovidCareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZotCovidCareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZotCovidCareUITests.swift; sourceTree = "<group>"; };
 		28454E2B25C3D53100269EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD44DC725DCE67B0057898A /* SettingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				28454E0725C3D52F00269EDC /* AppDelegate.swift */,
 				28454E0925C3D52F00269EDC /* SceneDelegate.swift */,
 				28454E0B25C3D52F00269EDC /* ViewController.swift */,
+				ACD44DC725DCE67B0057898A /* SettingPageView.swift */,
 				28454E0D25C3D52F00269EDC /* Main.storyboard */,
 				28454E1025C3D53000269EDC /* Assets.xcassets */,
 				28454E1225C3D53000269EDC /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			files = (
 				28454E0C25C3D52F00269EDC /* ViewController.swift in Sources */,
 				28454E0825C3D52F00269EDC /* AppDelegate.swift in Sources */,
+				ACD44DC825DCE67B0057898A /* SettingPageView.swift in Sources */,
 				28454E0A25C3D52F00269EDC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
