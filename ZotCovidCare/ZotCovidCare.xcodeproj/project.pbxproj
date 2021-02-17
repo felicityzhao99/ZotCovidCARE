@@ -15,6 +15,7 @@
 		28454E1425C3D53000269EDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28454E1225C3D53000269EDC /* LaunchScreen.storyboard */; };
 		28454E1F25C3D53100269EDC /* ZotCovidCareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E1E25C3D53100269EDC /* ZotCovidCareTests.swift */; };
 		28454E2A25C3D53100269EDC /* ZotCovidCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */; };
+		9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966E9F625CD1222003EE21D /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		28454E2525C3D53100269EDC /* ZotCovidCareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZotCovidCareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZotCovidCareUITests.swift; sourceTree = "<group>"; };
 		28454E2B25C3D53100269EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9966E9F625CD1222003EE21D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				28454E1025C3D53000269EDC /* Assets.xcassets */,
 				28454E1225C3D53000269EDC /* LaunchScreen.storyboard */,
 				28454E1525C3D53000269EDC /* Info.plist */,
+				9966E9F625CD1222003EE21D /* MapViewController.swift */,
 			);
 			path = ZotCovidCare;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				28454E0C25C3D52F00269EDC /* ViewController.swift in Sources */,
 				28454E0825C3D52F00269EDC /* AppDelegate.swift in Sources */,
 				28454E0A25C3D52F00269EDC /* SceneDelegate.swift in Sources */,
+				9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
