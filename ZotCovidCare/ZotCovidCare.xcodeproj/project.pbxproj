@@ -15,6 +15,10 @@
 		28454E1425C3D53000269EDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28454E1225C3D53000269EDC /* LaunchScreen.storyboard */; };
 		28454E1F25C3D53100269EDC /* ZotCovidCareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E1E25C3D53100269EDC /* ZotCovidCareTests.swift */; };
 		28454E2A25C3D53100269EDC /* ZotCovidCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */; };
+		28A0285025CB7C3E001AB519 /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0284F25CB7C3E001AB519 /* HealthViewController.swift */; };
+		28C3BD0525DCBD9300A5F455 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C3BD0425DCBD9300A5F455 /* HealthKit.framework */; };
+		28CADBD225CB701800092038 /* CheckUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CADBD125CB701800092038 /* CheckUpViewController.swift */; };
+		9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966E9F625CD1222003EE21D /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,11 @@
 		28454E2525C3D53100269EDC /* ZotCovidCareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZotCovidCareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28454E2925C3D53100269EDC /* ZotCovidCareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZotCovidCareUITests.swift; sourceTree = "<group>"; };
 		28454E2B25C3D53100269EDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28A0284F25CB7C3E001AB519 /* HealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewController.swift; sourceTree = "<group>"; };
+		28C3BD0225DCBD9300A5F455 /* ZotCovidCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZotCovidCare.entitlements; sourceTree = "<group>"; };
+		28C3BD0425DCBD9300A5F455 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		28CADBD125CB701800092038 /* CheckUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpViewController.swift; sourceTree = "<group>"; };
+		9966E9F625CD1222003EE21D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C3BD0525DCBD9300A5F455 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,7 @@
 				28454E1D25C3D53100269EDC /* ZotCovidCareTests */,
 				28454E2825C3D53100269EDC /* ZotCovidCareUITests */,
 				28454E0525C3D52F00269EDC /* Products */,
+				28C3BD0325DCBD9300A5F455 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +110,7 @@
 		28454E0625C3D52F00269EDC /* ZotCovidCare */ = {
 			isa = PBXGroup;
 			children = (
+				28C3BD0225DCBD9300A5F455 /* ZotCovidCare.entitlements */,
 				28454E0725C3D52F00269EDC /* AppDelegate.swift */,
 				28454E0925C3D52F00269EDC /* SceneDelegate.swift */,
 				28454E0B25C3D52F00269EDC /* ViewController.swift */,
@@ -106,6 +118,9 @@
 				28454E1025C3D53000269EDC /* Assets.xcassets */,
 				28454E1225C3D53000269EDC /* LaunchScreen.storyboard */,
 				28454E1525C3D53000269EDC /* Info.plist */,
+				28CADBD125CB701800092038 /* CheckUpViewController.swift */,
+				28A0284F25CB7C3E001AB519 /* HealthViewController.swift */,
+				9966E9F625CD1222003EE21D /* MapViewController.swift */,
 			);
 			path = ZotCovidCare;
 			sourceTree = "<group>";
@@ -126,6 +141,14 @@
 				28454E2B25C3D53100269EDC /* Info.plist */,
 			);
 			path = ZotCovidCareUITests;
+			sourceTree = "<group>";
+		};
+		28C3BD0325DCBD9300A5F455 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28C3BD0425DCBD9300A5F455 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CADBD225CB701800092038 /* CheckUpViewController.swift in Sources */,
 				28454E0C25C3D52F00269EDC /* ViewController.swift in Sources */,
 				28454E0825C3D52F00269EDC /* AppDelegate.swift in Sources */,
 				28454E0A25C3D52F00269EDC /* SceneDelegate.swift in Sources */,
+				28A0285025CB7C3E001AB519 /* HealthViewController.swift in Sources */,
+				9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZotCovidCare/ZotCovidCare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X79V5X28PF;
 				INFOPLIST_FILE = ZotCovidCare/Info.plist;
@@ -455,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZotCovidCare/ZotCovidCare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X79V5X28PF;
 				INFOPLIST_FILE = ZotCovidCare/Info.plist;
