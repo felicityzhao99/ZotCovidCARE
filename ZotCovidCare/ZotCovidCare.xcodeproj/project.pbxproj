@@ -18,6 +18,7 @@
 		28A0285025CB7C3E001AB519 /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0284F25CB7C3E001AB519 /* HealthViewController.swift */; };
 		28C3BD0525DCBD9300A5F455 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C3BD0425DCBD9300A5F455 /* HealthKit.framework */; };
 		28CADBD225CB701800092038 /* CheckUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CADBD125CB701800092038 /* CheckUpViewController.swift */; };
+		673453F225DEE78B00914B68 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673453F125DEE78B00914B68 /* GeneralViewController.swift */; };
 		9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966E9F625CD1222003EE21D /* MapViewController.swift */; };
 		ACD44DD025DCFC170057898A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD44DCF25DCFC170057898A /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		28C3BD0225DCBD9300A5F455 /* ZotCovidCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZotCovidCare.entitlements; sourceTree = "<group>"; };
 		28C3BD0425DCBD9300A5F455 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		28CADBD125CB701800092038 /* CheckUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpViewController.swift; sourceTree = "<group>"; };
+		673453F125DEE78B00914B68 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		9966E9F625CD1222003EE21D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ACD44DCF25DCFC170057898A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				28A0284F25CB7C3E001AB519 /* HealthViewController.swift */,
 				9966E9F625CD1222003EE21D /* MapViewController.swift */,
 				ACD44DCF25DCFC170057898A /* SettingViewController.swift */,
+				673453F125DEE78B00914B68 /* GeneralViewController.swift */,
 			);
 			path = ZotCovidCare;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				28CADBD225CB701800092038 /* CheckUpViewController.swift in Sources */,
 				28454E0C25C3D52F00269EDC /* ViewController.swift in Sources */,
 				28454E0825C3D52F00269EDC /* AppDelegate.swift in Sources */,
+				673453F225DEE78B00914B68 /* GeneralViewController.swift in Sources */,
 				28454E0A25C3D52F00269EDC /* SceneDelegate.swift in Sources */,
 				28A0285025CB7C3E001AB519 /* HealthViewController.swift in Sources */,
 				9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */,
