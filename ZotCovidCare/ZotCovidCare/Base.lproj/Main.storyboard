@@ -50,7 +50,7 @@
         <!--Covid Updates-->
         <scene sceneID="VU4-S0-B9a">
             <objects>
-                <viewController id="Ker-SF-NVL" customClass="GeneralViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GeneralViewController" id="Ker-SF-NVL" customClass="GeneralViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iK3-Jd-Ipo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,6 +170,7 @@
                         <outlet property="NewsOneLabel" destination="IaX-hB-YRP" id="JJv-85-B6r"/>
                         <outlet property="NewsTwoButton" destination="k66-As-9xr" id="i3s-Ef-iTr"/>
                         <outlet property="NewsTwoLabel" destination="J2W-wG-LAw" id="Vfi-A6-IYD"/>
+                        <outlet property="ViewMoreButton" destination="uY4-2z-WTL" id="NeK-cM-LIu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xzl-8I-Ulq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -435,6 +436,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1951" y="1344"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="ca0-By-ple">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="SuH-L8-gj0" customClass="SearchViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TW5-4p-C7S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fep-CN-HcG">
+                                <rect key="frame" x="20" y="84" width="374" height="43"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vyf-bK-QUf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIN-Yn-O50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-378.26086956521743" y="1984.8214285714284"/>
         </scene>
         <!--Check Up View Controller-->
         <scene sceneID="1ee-CT-Sia">
