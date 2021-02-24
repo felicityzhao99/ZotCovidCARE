@@ -17,7 +17,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jh8-RV-Wjh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.60271537303924561" green="0.60271537303924561" blue="0.82502380625842364" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="blG-FG-uoc" kind="relationship" relationship="viewControllers" id="uBQ-uL-1t7"/>
@@ -34,7 +34,9 @@
         <scene sceneID="rXv-Jt-Bzt">
             <objects>
                 <navigationController navigationBarHidden="YES" id="blG-FG-uoc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="General" image="smiley" catalog="system" id="moe-US-odo"/>
+                    <tabBarItem key="tabBarItem" title="General" image="smiley" catalog="system" id="moe-US-odo">
+                        <color key="badgeColor" red="0.60271537303924561" green="0.60271537303924561" blue="0.82502380625842364" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LIm-co-w1Y">
                         <autoresizingMask key="autoresizingMask"/>
@@ -125,7 +127,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.5" green="0.71397772293849049" blue="0.75263522360999191" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="uY4-2z-WTL" firstAttribute="centerY" secondItem="bvJ-Y5-Pui" secondAttribute="centerY" id="9oe-Fz-iLU"/>
                                             <constraint firstItem="ABg-jF-YO5" firstAttribute="centerX" secondItem="3BJ-ec-0r3" secondAttribute="centerX" id="Fkq-0i-CV9"/>
@@ -142,7 +144,12 @@
                                             <constraint firstItem="uxY-xI-s4g" firstAttribute="top" secondItem="3BJ-ec-0r3" secondAttribute="top" constant="30" id="ufe-oH-5AK"/>
                                         </constraints>
                                     </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-78-OBp">
+                                        <rect key="frame" x="-18" y="174" width="432" height="405"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="3BJ-ec-0r3" firstAttribute="width" secondItem="mlt-gv-Hav" secondAttribute="width" id="jCi-JE-9Uh"/>
                                     <constraint firstItem="3BJ-ec-0r3" firstAttribute="trailing" secondItem="Q60-4i-uH2" secondAttribute="trailing" id="kSo-a8-FjQ"/>
@@ -155,7 +162,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDK-Db-Gnn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.53725490196078429" green="0.71372549019607845" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="g95-vV-e04" firstAttribute="top" secondItem="wDK-Db-Gnn" secondAttribute="top" id="Udx-nN-MdR"/>
                             <constraint firstItem="g95-vV-e04" firstAttribute="leading" secondItem="wDK-Db-Gnn" secondAttribute="leading" id="XbU-Uk-KAv"/>
@@ -181,7 +188,9 @@
         <scene sceneID="Hdi-U7-Ajp">
             <objects>
                 <navigationController navigationBarHidden="YES" id="2ZB-UW-xSA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="8kx-x2-UcD"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="8kx-x2-UcD">
+                        <color key="badgeColor" red="0.602715373" green="0.602715373" blue="0.82502380630000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjk-HO-4r7">
                         <autoresizingMask key="autoresizingMask"/>
@@ -198,7 +207,9 @@
         <scene sceneID="B0N-PE-sFo">
             <objects>
                 <navigationController navigationBarHidden="YES" id="QXl-Nc-13E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Health" image="heart" catalog="system" id="cxB-Tc-ypC"/>
+                    <tabBarItem key="tabBarItem" title="My Health" image="heart" catalog="system" id="cxB-Tc-ypC">
+                        <color key="badgeColor" red="0.602715373" green="0.602715373" blue="0.82502380630000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CUN-PD-aP6">
                         <autoresizingMask key="autoresizingMask"/>
@@ -359,7 +370,9 @@
         <scene sceneID="219-vG-IgF">
             <objects>
                 <navigationController navigationBarHidden="YES" id="qqI-Jt-MMC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="questionmark.circle" catalog="system" id="AyO-ad-uQA"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="questionmark.circle" catalog="system" id="AyO-ad-uQA">
+                        <color key="badgeColor" red="0.602715373" green="0.602715373" blue="0.82502380630000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uyz-D1-8nM">
                         <autoresizingMask key="autoresizingMask"/>
@@ -548,6 +561,7 @@
     <resources>
         <image name="first_covid_vaccinations_at_UCI" width="300" height="169"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="logo" width="230" height="170"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <image name="smiley" catalog="system" width="128" height="121"/>
