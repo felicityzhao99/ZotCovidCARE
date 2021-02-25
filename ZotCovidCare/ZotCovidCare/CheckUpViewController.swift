@@ -35,7 +35,7 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
     
 
     @IBOutlet var field: UITextField!
-    public var completionHandler: ((String?)->Void)?
+    public var completionHandler: ((String?,[Int]?)->Void)?
     
     
     
@@ -46,7 +46,19 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func didTapSubmit(){
-        completionHandler?(field.text)
+        var arr:[Int] = []
+        let cells = self.tableView.visibleCells
+        
+        for cell in cells {
+            if cell.accessoryType.rawValue > 0{
+                arr.append(1)
+            }
+            else{
+                arr.append(0)
+            }
+        }
+        
+        completionHandler?(field.text, arr)
         dismiss(animated: true, completion: nil)
     }
     
