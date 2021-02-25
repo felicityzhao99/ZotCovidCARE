@@ -275,17 +275,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnI-PA-pu2">
-                                <rect key="frame" x="100" y="264" width="214" height="30"/>
-                                <state key="normal" title="New Checkup"/>
-                                <connections>
-                                    <action selector="didTapButtonCheckUp" destination="qZN-E3-bfN" eventType="touchUpInside" id="cEY-NB-lVC"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start a new checkup to receive results and feedbacks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFs-kk-afY">
-                                <rect key="frame" x="10" y="115" width="394" height="139"/>
+                                <rect key="frame" x="10" y="115" width="394" height="256"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="139" id="6Rz-FR-gix"/>
+                                    <constraint firstAttribute="height" constant="256" id="6Rz-FR-gix"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -299,14 +292,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLl-q1-Yq7">
-                                <rect key="frame" x="20" y="347" width="113" height="27"/>
+                                <rect key="frame" x="20" y="477" width="113" height="27"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CCj-lD-LOp">
-                                <rect key="frame" x="20" y="484" width="374" height="153"/>
+                                <rect key="frame" x="20" y="574" width="374" height="153"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="153" id="6Ml-la-9mT"/>
@@ -322,6 +315,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnI-PA-pu2">
+                                <rect key="frame" x="100" y="389" width="214" height="30"/>
+                                <state key="normal" title="New Checkup"/>
+                                <connections>
+                                    <action selector="didTapButtonCheckUp" destination="qZN-E3-bfN" eventType="touchUpInside" id="cEY-NB-lVC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wFc-0h-kop"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -336,11 +336,11 @@
                             <constraint firstItem="CCj-lD-LOp" firstAttribute="leading" secondItem="fCy-VU-LD5" secondAttribute="leading" id="YMJ-MQ-EZK"/>
                             <constraint firstItem="wFc-0h-kop" firstAttribute="trailing" secondItem="jFs-kk-afY" secondAttribute="trailing" constant="10" id="a6k-W3-GEh"/>
                             <constraint firstItem="wFc-0h-kop" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YLl-q1-Yq7" secondAttribute="trailing" symbolic="YES" id="ixh-Xn-ije"/>
-                            <constraint firstItem="YLl-q1-Yq7" firstAttribute="top" secondItem="gnI-PA-pu2" secondAttribute="bottom" constant="53" id="m2m-CF-o2f"/>
+                            <constraint firstItem="YLl-q1-Yq7" firstAttribute="top" secondItem="gnI-PA-pu2" secondAttribute="bottom" constant="58" id="m2m-CF-o2f"/>
                             <constraint firstItem="wFc-0h-kop" firstAttribute="trailing" secondItem="CCj-lD-LOp" secondAttribute="trailing" constant="20" id="nWk-Hl-nbX"/>
                             <constraint firstItem="jFs-kk-afY" firstAttribute="leading" secondItem="wFc-0h-kop" secondAttribute="leading" constant="10" id="qgs-CU-yXI"/>
-                            <constraint firstItem="wFc-0h-kop" firstAttribute="bottom" secondItem="CCj-lD-LOp" secondAttribute="bottom" constant="176" id="rQf-2x-cyA"/>
-                            <constraint firstItem="gnI-PA-pu2" firstAttribute="top" secondItem="jFs-kk-afY" secondAttribute="bottom" constant="10" id="rXK-TP-Ik1"/>
+                            <constraint firstItem="wFc-0h-kop" firstAttribute="bottom" secondItem="CCj-lD-LOp" secondAttribute="bottom" constant="86" id="rQf-2x-cyA"/>
+                            <constraint firstItem="gnI-PA-pu2" firstAttribute="top" secondItem="jFs-kk-afY" secondAttribute="bottom" constant="18" id="rXK-TP-Ik1"/>
                             <constraint firstItem="wFc-0h-kop" firstAttribute="trailing" secondItem="gnI-PA-pu2" secondAttribute="trailing" constant="100" id="sEh-cc-PXQ"/>
                         </constraints>
                     </view>
@@ -414,12 +414,10 @@
         <!--Settings-->
         <scene sceneID="219-vG-IgF">
             <objects>
-                <navigationController navigationBarHidden="YES" id="qqI-Jt-MMC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="questionmark.circle" catalog="system" id="AyO-ad-uQA">
-                        <color key="badgeColor" red="0.602715373" green="0.602715373" blue="0.82502380630000005" alpha="1" colorSpace="calibratedRGB"/>
-                    </tabBarItem>
-                    <nil key="simulatedTopBarMetrics"/>
+                <navigationController id="qqI-Jt-MMC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="questionmark.circle" catalog="system" id="AyO-ad-uQA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uyz-D1-8nM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -570,6 +568,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RyE-a0-7ke">
+                                <rect key="frame" x="70" y="149" width="69" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="°F"/>
+                                    <segment title="°C"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h4k-lg-3lf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

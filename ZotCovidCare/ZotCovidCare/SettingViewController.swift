@@ -23,8 +23,8 @@ class SettingViewController: UIViewController {
     }
     @IBAction func didTapButtonAbout(){
         let vc = UIViewController()
-        vc.view.backgroundColor = .yellow
-        
+        vc.view.backgroundColor = .white
+//        vc.view.text
         navigationController?.pushViewController(vc, animated: true)
     }
     

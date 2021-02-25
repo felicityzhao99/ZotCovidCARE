@@ -50,8 +50,27 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func didTapButtonCheckUp(){
         let vcCheckup = storyboard?.instantiateViewController(identifier: "checkup") as! CheckUpViewController
         vcCheckup.modalPresentationStyle = .fullScreen
-        vcCheckup.completionHandler = { text in
-            self.label.text = "temperature: " + text!
+        vcCheckup.completionHandler = { text,arr in
+//            self.label.text = "Temperature: " + text! + "°F\nSymptoms: Fever, Cough\nRisk: High Risk\n\nSuggestion:\n1.Take a fever reducer.\n2.Drink warm beverages, Breathe in steam.\n\nClosest Testing Center:\n3850 Barranca Pkwy KL, Irvine, CA 92606"
+//            self.label.text = "Temperature: " + text! + "°F\nSymptoms: None\nRisk: Low Risk\n\nSuggestion:\n1.Stay home and keep 6ft from others" + String(arr![0])
+            let symptoms = ["Fever","Cough","Breathing Difficulty","Loss of Smell/Taste","Headache","Diarrhea","Muscle Pain","None"]
+
+            let a = String(arr![0])
+            let b = String(arr![1])
+            let c = String(arr![2])
+            let d = String(arr![3])
+            let e = String(arr![4])
+            let f = String(arr![5])
+            let g = String(arr![6])
+            let h = String(arr![7])
+            
+            
+            
+            self.label.text = "Temperature: " + text! + "°F\nSymptoms: None\nRisk: Low Risk\n\nSuggestion:\n1.Stay home and keep 6ft from others\n" + a + b + c + d + e + f + g + h
+            
+            self.label.textAlignment = .left
+            self.label.textColor = .systemGreen
+            
         }
         present(vcCheckup,animated: true)
         
