@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import WebKit
 
-class GeneralViewController: UIViewController {
+class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var NewsOneButton: UIButton!
     @IBOutlet weak var NewsTwoButton: UIButton!
@@ -17,8 +18,39 @@ class GeneralViewController: UIViewController {
     
     @IBOutlet weak var ViewMoreButton: UIButton!
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var DashboardView: WKWebView!
+    
+    let IrvineCases = ["Total Positive Cases: ", "Daily Positive Cases: ", "Total Deaths Cases: ", "Daily Deaths Cases:  ", "Total Recovered Cases: "]
+    
+    let numbers = [245460, 325, 3848, 0, 227622]
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return IrvineCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        //cell.layer.cornerRadius = 20.0
+        cell.textLabel?.text = IrvineCases[indexPath.row] + String(numbers[indexPath.row])
+        return cell
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // [Statistics Part]
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.layer.cornerRadius = 10.0
+        DashboardView.layer.cornerRadius = 10.0
+        
+        let url = URL(string: "https://uci.edu/coronavirus/dashboard/index.php")
+        let request = URLRequest(url: url!)
+
+        DashboardView.load(request)
 
         // [Latest News Part]
         
@@ -64,3 +96,4 @@ class GeneralViewController: UIViewController {
     
 
 }
+
