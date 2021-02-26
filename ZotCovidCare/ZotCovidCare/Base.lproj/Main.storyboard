@@ -185,7 +185,7 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-78-OBp">
-                                        <rect key="frame" x="-18" y="174" width="432" height="405"/>
+                                        <rect key="frame" x="-18" y="805" width="432" height="405"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -436,62 +436,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Receive Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htc-bV-Gpv">
-                                <rect key="frame" x="20" y="110" width="195" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cXK-Td-bF8">
-                                <rect key="frame" x="330" y="105" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4D-NE-3oO">
-                                <rect key="frame" x="20" y="177" width="84" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qj4-4o-DLY">
-                                <rect key="frame" x="330" y="167" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l96-J3-oc2">
-                                <rect key="frame" x="20" y="247" width="66" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="About US"/>
-                                <connections>
-                                    <action selector="didTapButtonAbout" destination="SjZ-0X-ArR" eventType="touchUpInside" id="Ddx-5e-dfX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBp-mN-XUs">
-                                <rect key="frame" x="20" y="351" width="128" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Safety and Privacy"/>
-                                <connections>
-                                    <action selector="didTapButtonSafety" destination="SjZ-0X-ArR" eventType="touchUpInside" id="esA-Py-Eed"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQt-g1-sK1">
-                                <rect key="frame" x="20" y="458" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Version Number"/>
-                                <connections>
-                                    <action selector="didTapButtonVersion" destination="SjZ-0X-ArR" eventType="touchUpInside" id="klp-wG-hUh"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="z3g-2W-D5H">
+                                <rect key="frame" x="50" y="138" width="314" height="425"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NEz-bb-H5h">
+                                        <rect key="frame" x="0.0" y="0.0" width="220.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Receive Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htc-bV-Gpv">
+                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="ReceiveNotif" translatesAutoresizingMaskIntoConstraints="NO" id="cXK-Td-bF8">
+                                                <rect key="frame" x="171.5" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="VYE-xL-PdE">
+                                        <rect key="frame" x="0.0" y="96" width="222.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4D-NE-3oO">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qj4-4o-DLY">
+                                                <rect key="frame" x="173.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="darkModeAction" destination="SjZ-0X-ArR" eventType="touchUpInside" id="xgN-d9-j6j"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBp-mN-XUs">
+                                        <rect key="frame" x="0.0" y="192" width="142" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Safety and Privacy">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapButtonSafety" destination="SjZ-0X-ArR" eventType="touchUpInside" id="esA-Py-Eed"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l96-J3-oc2">
+                                        <rect key="frame" x="0.0" y="294" width="73" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="About US">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapButtonAbout" destination="SjZ-0X-ArR" eventType="touchUpInside" id="Ddx-5e-dfX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQt-g1-sK1">
+                                        <rect key="frame" x="0.0" y="392" width="123" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Version Number">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapButtonVersion" destination="SjZ-0X-ArR" eventType="touchUpInside" id="klp-wG-hUh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="0.29999999999999999" height="1"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fT5-SL-dGH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fT5-SL-dGH" firstAttribute="trailing" secondItem="z3g-2W-D5H" secondAttribute="trailing" constant="50" id="93H-0C-5ZL"/>
+                            <constraint firstItem="z3g-2W-D5H" firstAttribute="leading" secondItem="fT5-SL-dGH" secondAttribute="leading" constant="50" id="Fzi-cC-EIj"/>
+                            <constraint firstItem="fT5-SL-dGH" firstAttribute="bottom" secondItem="z3g-2W-D5H" secondAttribute="bottom" constant="250" id="S1Y-PY-PPo"/>
+                            <constraint firstItem="z3g-2W-D5H" firstAttribute="top" secondItem="fT5-SL-dGH" secondAttribute="top" constant="50" id="jQy-6Z-IZs"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="bQr-bZ-cib"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Settings" id="UhK-Mk-hJN"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="AboutLabel" destination="l96-J3-oc2" id="rna-b8-R0u"/>
+                        <outlet property="LabelReceive" destination="htc-bV-Gpv" id="uik-Ca-skR"/>
+                        <outlet property="Outlet" destination="qj4-4o-DLY" id="E38-eG-F72"/>
+                        <outlet property="label" destination="e4D-NE-3oO" id="S6q-Pw-7dD"/>
+                        <outlet property="safetyLabel" destination="yBp-mN-XUs" id="88n-hb-ocI"/>
+                        <outlet property="versionLabel" destination="IQt-g1-sK1" id="yi3-0d-joR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="1344"/>
+            <point key="canvasLocation" x="1950.7246376811595" y="1343.9732142857142"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="ca0-By-ple">
@@ -620,6 +655,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
