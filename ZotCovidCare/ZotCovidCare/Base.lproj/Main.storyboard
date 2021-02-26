@@ -322,6 +322,10 @@
                                     <action selector="didTapButtonCheckUp" destination="qZN-E3-bfN" eventType="touchUpInside" id="cEY-NB-lVC"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cool-background" translatesAutoresizingMaskIntoConstraints="NO" id="Jxq-Os-Q8j">
+                                <rect key="frame" x="-370" y="-40" width="1204" height="606"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wFc-0h-kop"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -538,7 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950.7246376811595" y="1343.9732142857142"/>
+            <point key="canvasLocation" x="1951" y="1304"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="ca0-By-ple">
@@ -657,6 +661,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cool-background" width="1200" height="580"/>
         <image name="first_covid_vaccinations_at_UCI" width="300" height="169"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="logo" width="230" height="170"/>
