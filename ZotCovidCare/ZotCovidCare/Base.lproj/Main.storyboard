@@ -185,7 +185,7 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-78-OBp">
-                                        <rect key="frame" x="-18" y="805" width="432" height="405"/>
+                                        <rect key="frame" x="-18" y="174" width="432" height="405"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -439,31 +439,31 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="z3g-2W-D5H">
                                 <rect key="frame" x="50" y="138" width="314" height="425"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NEz-bb-H5h">
-                                        <rect key="frame" x="0.0" y="0.0" width="220.5" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="NEz-bb-H5h">
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Receive Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htc-bV-Gpv">
-                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="ReceiveNotif" translatesAutoresizingMaskIntoConstraints="NO" id="cXK-Td-bF8">
-                                                <rect key="frame" x="171.5" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="240" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="VYE-xL-PdE">
-                                        <rect key="frame" x="0.0" y="96" width="222.5" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="VYE-xL-PdE">
+                                        <rect key="frame" x="0.0" y="96" width="287.5" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4D-NE-3oO">
-                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qj4-4o-DLY">
-                                                <rect key="frame" x="173.5" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="238.5" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="darkModeAction" destination="SjZ-0X-ArR" eventType="touchUpInside" id="xgN-d9-j6j"/>
                                                 </connections>
@@ -471,8 +471,8 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBp-mN-XUs">
-                                        <rect key="frame" x="0.0" y="192" width="142" height="37"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="192" width="149" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Safety and Privacy">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
@@ -481,8 +481,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l96-J3-oc2">
-                                        <rect key="frame" x="0.0" y="294" width="73" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="292" width="77" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="About US">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
@@ -490,16 +490,27 @@
                                             <action selector="didTapButtonAbout" destination="SjZ-0X-ArR" eventType="touchUpInside" id="Ddx-5e-dfX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQt-g1-sK1">
-                                        <rect key="frame" x="0.0" y="392" width="123" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Version Number">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTapButtonVersion" destination="SjZ-0X-ArR" eventType="touchUpInside" id="klp-wG-hUh"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="qV9-zc-Jrw">
+                                        <rect key="frame" x="0.0" y="391" width="285" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQt-g1-sK1">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Version Number">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTapButtonVersion" destination="SjZ-0X-ArR" eventType="touchUpInside" id="klp-wG-hUh"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hr5-OY-w7l">
+                                                <rect key="frame" x="250" y="0.0" width="35" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="0.29999999999999999" height="1"/>
                             </stackView>
@@ -519,6 +530,7 @@
                         <outlet property="AboutLabel" destination="l96-J3-oc2" id="rna-b8-R0u"/>
                         <outlet property="LabelReceive" destination="htc-bV-Gpv" id="uik-Ca-skR"/>
                         <outlet property="Outlet" destination="qj4-4o-DLY" id="E38-eG-F72"/>
+                        <outlet property="VersionNum" destination="hr5-OY-w7l" id="aGp-oM-eQE"/>
                         <outlet property="label" destination="e4D-NE-3oO" id="S6q-Pw-7dD"/>
                         <outlet property="safetyLabel" destination="yBp-mN-XUs" id="88n-hb-ocI"/>
                         <outlet property="versionLabel" destination="IQt-g1-sK1" id="yi3-0d-joR"/>

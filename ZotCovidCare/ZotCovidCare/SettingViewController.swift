@@ -20,6 +20,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var AboutLabel: UIButton!
     @IBOutlet weak var safetyLabel: UIButton!
     @IBOutlet weak var versionLabel: UIButton!
+    @IBOutlet weak var VersionNum: UILabel!
     
     @IBOutlet weak var settingTitle: UINavigationItem!
     @IBAction func darkModeAction(){
@@ -27,6 +28,7 @@ class SettingViewController: UIViewController {
             view.backgroundColor = UIColor.black
             label.textColor = UIColor.white
             LabelReceive.textColor = UIColor.white
+            VersionNum.textColor = UIColor.white
             AboutLabel.setTitleColor(.white, for: .normal)
             safetyLabel.setTitleColor(.white, for: .normal)
             versionLabel.setTitleColor(.white, for: .normal)
@@ -35,6 +37,7 @@ class SettingViewController: UIViewController {
             view.backgroundColor = UIColor.white
             label.textColor = UIColor.black
             LabelReceive.textColor = UIColor.black
+            VersionNum.textColor = UIColor.black
             AboutLabel.setTitleColor(.black, for: .normal)
             safetyLabel.setTitleColor(.black, for: .normal)
             versionLabel.setTitleColor(.black, for: .normal)
@@ -50,8 +53,8 @@ class SettingViewController: UIViewController {
     @IBAction func didTapButtonSafety(){
         let vc = UIViewController()
         //Insert text and change text features
-        let txt = UILabel(frame: CGRect(x: 0, y: 50, width: 300, height: 400))
-        txt.text = "Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World "
+        let txt = UILabel(frame: CGRect(x: 20, y: 100, width: 350, height: 600))
+        txt.text = "PRIVACY NOTICE LAST UPDATED FEBRUARY 26, 2021.                  Thank you for choosing to be part of our community at ZotCovidCare (COMPANY, WE, US, OUR). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at ZotCovidCare@gmail.com.When you use our mobile application, as the case may be (the APP) and more generally, use any of our services (the SERVICES, which include the App), we appreciate that you are trusting us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Services immediately."
     
         txt.lineBreakMode = NSLineBreakMode.byWordWrapping
         txt.numberOfLines = 0
@@ -99,14 +102,26 @@ class SettingViewController: UIViewController {
     
     @IBAction func didTapButtonVersion(){
         let vc = UIViewController()
+        //Insert text and change text features
+        let txt = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        txt.text = "1.0.0"
+    
+        txt.lineBreakMode = NSLineBreakMode.byWordWrapping
+        txt.numberOfLines = 0
+
+
+        //For dark mode
         if Outlet.isOn == true{
             vc.view.backgroundColor = .black
-            navigationController?.pushViewController(vc, animated: true)}
+            txt.textColor = .white
+            }
         else{
             vc.view.backgroundColor = .white
-            navigationController?.pushViewController(vc, animated: true)
-                
+            txt.textColor = .black
             }
+        
+        vc.view.addSubview(txt)
+        navigationController?.pushViewController(vc, animated: true)
 
     }
    
