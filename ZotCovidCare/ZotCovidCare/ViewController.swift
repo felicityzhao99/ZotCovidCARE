@@ -26,7 +26,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
 
 }
 
