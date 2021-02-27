@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import re
 
 
 def parse_dashboard():
@@ -52,7 +53,22 @@ def parse_oc():
         for i in values:
             value.append(i.get_text())
     for i in range(len(key)):
-        dic[key[i]] = value[i]
+        case = key[i].strip()
+        if case == "Cumulative Cases to Date(includes deaths)":
+            case = "total_pos_cases"
+        elif case == "Daily COVID Positive Cases Received":
+            case = "daily_pos_cases"
+        elif case == "Cumulative Deaths to Date":
+            case = "total_deaths_cases"
+        elif case == "Deaths Reported Today":
+            case = "daily_deaths_cases"
+        elif case == "Cumulative Recovered to Date":
+            case = "total_recovered_cases"
+        else:
+            continue
+        counts = re.sub(r'[^\w]', '', value[i])
+
+        dic[case] = int(counts)
     with open('oc_json.json', 'w') as f:
         json.dump(dic, f)
 
