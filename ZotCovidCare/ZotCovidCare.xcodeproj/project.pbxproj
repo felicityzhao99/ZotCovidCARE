@@ -20,6 +20,7 @@
 		28CADBD225CB701800092038 /* CheckUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CADBD125CB701800092038 /* CheckUpViewController.swift */; };
 		673453F225DEE78B00914B68 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673453F125DEE78B00914B68 /* GeneralViewController.swift */; };
 		6758542425DF29A500CA4D36 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6758542325DF29A500CA4D36 /* SearchViewController.swift */; };
+		67F629DF25EA135A002324BB /* oc_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 67F629DE25EA1359002324BB /* oc_json.json */; };
 		9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966E9F625CD1222003EE21D /* MapViewController.swift */; };
 		ACD44DD025DCFC170057898A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD44DCF25DCFC170057898A /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		28CADBD125CB701800092038 /* CheckUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpViewController.swift; sourceTree = "<group>"; };
 		673453F125DEE78B00914B68 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		6758542325DF29A500CA4D36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		67F629DE25EA1359002324BB /* oc_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = oc_json.json; path = ../../CovidCrawler/oc_json.json; sourceTree = "<group>"; };
 		9966E9F625CD1222003EE21D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ACD44DCF25DCFC170057898A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 		28454E0625C3D52F00269EDC /* ZotCovidCare */ = {
 			isa = PBXGroup;
 			children = (
+				67F629DE25EA1359002324BB /* oc_json.json */,
 				28C3BD0225DCBD9300A5F455 /* ZotCovidCare.entitlements */,
 				28454E0725C3D52F00269EDC /* AppDelegate.swift */,
 				28454E0925C3D52F00269EDC /* SceneDelegate.swift */,
@@ -266,6 +269,7 @@
 				28454E1425C3D53000269EDC /* LaunchScreen.storyboard in Resources */,
 				28454E1125C3D53000269EDC /* Assets.xcassets in Resources */,
 				28454E0F25C3D52F00269EDC /* Main.storyboard in Resources */,
+				67F629DF25EA135A002324BB /* oc_json.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

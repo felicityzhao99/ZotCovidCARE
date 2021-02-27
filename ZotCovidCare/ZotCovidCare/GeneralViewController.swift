@@ -2,7 +2,7 @@
 //  GeneralViewController.swift
 //  ZotCovidCare
 //
-//  Created by Felicity Zhao on 2/18/21.
+//  Created by Qian Zhao on 2/18/21.
 //
 
 import UIKit
@@ -23,7 +23,7 @@ class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let IrvineCases = ["Total Positive Cases: ", "Daily Positive Cases: ", "Total Deaths Cases: ", "Daily Deaths Cases:  ", "Total Recovered Cases: "]
     
-    let numbers = [245460, 325, 3848, 0, 227622]
+    var numbers = [0, 0, 0, 0, 0]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return IrvineCases.count
@@ -46,6 +46,8 @@ class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         tableView.layer.cornerRadius = 10.0
         DashboardView.layer.cornerRadius = 10.0
+        
+        FetchingInformation()
         
         let url = URL(string: "https://uci.edu/coronavirus/dashboard/index.php")
         let request = URLRequest(url: url!)
@@ -94,6 +96,36 @@ class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        navigation.didMove(toParent: self)
 //    }
     
-
+    // Irvine Json data to front-end
+    func FetchingInformation() {
+        // Note that on the left panel, the oc_json.json is just a reference,
+        // and it actually points to the file in CovidCrawler folder.
+        guard let path = Bundle.main.path(forResource: "oc_json", ofType: "json") else {return}
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            print(json)
+            
+            guard let caseDict = json as? [String: Any] else {return}
+            guard let daily_deaths_cases = caseDict["daily_deaths_cases"] as? Int else {return}
+            guard let daily_pos_cases = caseDict["daily_pos_cases"] as? Int else {return}
+            guard let total_deaths_cases = caseDict["total_deaths_cases"] as? Int else {return}
+            guard let total_pos_cases = caseDict["total_pos_cases"] as? Int else {return}
+            guard let total_recovered_cases = caseDict["total_recovered_cases"] as? Int else {return}
+            
+            numbers[0] = total_pos_cases
+            numbers[1] = daily_pos_cases
+            numbers[2] = total_deaths_cases
+            numbers[3] = daily_deaths_cases
+            numbers[4] = total_recovered_cases
+            
+        } catch {
+            print(error)
+        }
+    }
+    
 }
 
