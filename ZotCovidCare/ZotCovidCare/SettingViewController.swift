@@ -19,28 +19,28 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var LabelReceive: UILabel!
     @IBOutlet weak var AboutLabel: UIButton!
     @IBOutlet weak var safetyLabel: UIButton!
-    @IBOutlet weak var versionLabel: UIButton!
     @IBOutlet weak var VersionNum: UILabel!
     
+    @IBOutlet weak var versionNumber: UILabel!
     @IBOutlet weak var settingTitle: UINavigationItem!
     @IBAction func darkModeAction(){
         if Outlet.isOn == true{
             view.backgroundColor = UIColor.black
             label.textColor = UIColor.white
             LabelReceive.textColor = UIColor.white
+            versionNumber.textColor = UIColor.white
             VersionNum.textColor = UIColor.white
             AboutLabel.setTitleColor(.white, for: .normal)
             safetyLabel.setTitleColor(.white, for: .normal)
-            versionLabel.setTitleColor(.white, for: .normal)
             
         }else{
             view.backgroundColor = UIColor.white
             label.textColor = UIColor.black
             LabelReceive.textColor = UIColor.black
             VersionNum.textColor = UIColor.black
+            versionNumber.textColor = UIColor.black
             AboutLabel.setTitleColor(.black, for: .normal)
             safetyLabel.setTitleColor(.black, for: .normal)
-            versionLabel.setTitleColor(.black, for: .normal)
         }
     }
     
@@ -100,30 +100,7 @@ class SettingViewController: UIViewController {
 
     }
     
-    @IBAction func didTapButtonVersion(){
-        let vc = UIViewController()
-        //Insert text and change text features
-        let txt = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        txt.text = "1.0.0"
     
-        txt.lineBreakMode = NSLineBreakMode.byWordWrapping
-        txt.numberOfLines = 0
-
-
-        //For dark mode
-        if Outlet.isOn == true{
-            vc.view.backgroundColor = .black
-            txt.textColor = .white
-            }
-        else{
-            vc.view.backgroundColor = .white
-            txt.textColor = .black
-            }
-        
-        vc.view.addSubview(txt)
-        navigationController?.pushViewController(vc, animated: true)
-
-    }
    
     
 

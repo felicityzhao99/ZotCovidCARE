@@ -475,7 +475,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBp-mN-XUs">
-                                        <rect key="frame" x="0.0" y="192" width="149" height="35"/>
+                                        <rect key="frame" x="0.0" y="192" width="149" height="47.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Safety and Privacy">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -485,7 +485,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l96-J3-oc2">
-                                        <rect key="frame" x="0.0" y="292" width="77" height="34"/>
+                                        <rect key="frame" x="0.0" y="304.5" width="77" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="About US">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -495,20 +495,15 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="qV9-zc-Jrw">
-                                        <rect key="frame" x="0.0" y="391" width="285" height="34"/>
+                                        <rect key="frame" x="0.0" y="403.5" width="284.5" height="21.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQt-g1-sK1">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6L-HY-Bwx">
+                                                <rect key="frame" x="0.0" y="0.0" width="129.5" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Version Number">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapButtonVersion" destination="SjZ-0X-ArR" eventType="touchUpInside" id="klp-wG-hUh"/>
-                                                </connections>
-                                            </button>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hr5-OY-w7l">
-                                                <rect key="frame" x="250" y="0.0" width="35" height="34"/>
+                                                <rect key="frame" x="249.5" y="0.0" width="35" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -537,7 +532,7 @@
                         <outlet property="VersionNum" destination="hr5-OY-w7l" id="aGp-oM-eQE"/>
                         <outlet property="label" destination="e4D-NE-3oO" id="S6q-Pw-7dD"/>
                         <outlet property="safetyLabel" destination="yBp-mN-XUs" id="88n-hb-ocI"/>
-                        <outlet property="versionLabel" destination="IQt-g1-sK1" id="yi3-0d-joR"/>
+                        <outlet property="versionNumber" destination="j6L-HY-Bwx" id="VJT-6K-A6A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
