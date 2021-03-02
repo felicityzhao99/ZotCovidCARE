@@ -364,11 +364,11 @@
             <objects>
                 <viewController id="Rup-Uw-Wza" customClass="MapViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SqF-f0-JdU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-pc-UGE">
-                                <rect key="frame" x="32" y="86" width="350" height="43"/>
+                                <rect key="frame" x="32" y="42" width="350" height="43"/>
                                 <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="tvU-nT-SpW"/>
@@ -378,13 +378,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-N5-mAi">
-                                <rect key="frame" x="32" y="540" width="362" height="227"/>
+                                <rect key="frame" x="32" y="535" width="362" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="Zwl-c0-HLl"/>
                                 </constraints>
                             </mapView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-JV-jnc">
-                                <rect key="frame" x="32" y="289" width="362" height="195"/>
+                                <rect key="frame" x="32" y="284" width="362" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="Mnt-5L-eVv"/>
                                 </constraints>
@@ -533,6 +533,7 @@
                         <outlet property="label" destination="e4D-NE-3oO" id="S6q-Pw-7dD"/>
                         <outlet property="safetyLabel" destination="yBp-mN-XUs" id="88n-hb-ocI"/>
                         <outlet property="versionNumber" destination="j6L-HY-Bwx" id="VJT-6K-A6A"/>
+                        <segue destination="Rup-Uw-Wza" kind="presentation" identifier="modeMap" id="Qwm-Cg-ZEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -655,6 +656,9 @@
             <point key="canvasLocation" x="405.79710144927537" y="1984.8214285714284"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qwm-Cg-ZEa"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cool-background" width="1200" height="580"/>
         <image name="first_covid_vaccinations_at_UCI" width="300" height="169"/>
