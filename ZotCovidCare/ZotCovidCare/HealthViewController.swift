@@ -37,7 +37,6 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     /*functions for recommendation system*/
-    let symptomsName = ["Fever","Cough","Breathing Difficulty","Loss of Smell/Taste","Headache","Diarrhea","Muscle Pain","None"]
     
     
     //TODO: need to add personal model and health data as parameter
@@ -61,15 +60,72 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else{
             return 3
         }
-        
-        
     }
     
-    func giveSuggestion(symptoms: [Int], risk: Int)-> String{
+    
+    //example: "Temperature: " + text! + "°F\nSymptoms: Fever, Cough\nRisk: High Risk\n\nSuggestion:\n1.Take a fever reducer.\n2.Drink warm beverages, Breathe in steam.\n\nClosest Testing Center:\n3850 Barranca Pkwy KL, Irvine, CA 92606"
+
+    func giveSuggestion(temperature: String, symptoms: [Int], risk: Int)-> String{
+        let symptomsName = ["Fever",
+                            "Cough",
+                            "Breathing Difficulty",
+                            "Loss of Smell/Taste",
+                            "Headache",
+                            "Diarrhea",
+                            "Muscle Pain",
+                            "None"]
+        //www.umms.org/coronavirus/what-to-know/treat-covid-at-home
+        //www.medicalnewstoday.com/articles/coronavirus-home-remedies#is-home-treatment-effective
+        let suggestions = ["Take a fever reducer.",
+                           "Drink warm beverages throughout the day.",
+                           "Take slow breaths, Try meditation.",
+                           "Sniff prescribed odors if possible.",
+                           "Get enough sleep, Take pain reliever if necessary.",
+                           "Drink more water, Avoid fatty or fried foods.",
+                           "Stretch, Use ice pack, Take pain reliever if necessary.",
+                           "Wash hands often, Keep 6ft away from others."]
         
+        var output = ""
+        var symptomText = ""
+        var suggestionText = ""
+        var i = 0;
+        var num = 1;
         
+        //add temperature to output
+        //TODO: add Fahrenheit vs Celsius check
+        output += "Temperature: " + temperature + "°F" + "\n"
         
-        return ""
+        //loop through all symptoms, if symptom==1, add to symptoms and add Corresponding Suggestion
+        for (i, symptom) in symptoms.enumerated(){
+            if(symptom == 1){
+                if (num != 1){
+                    symptomText += ", "
+                    suggestionText += "\n"
+                }
+                symptomText += symptomsName[i]
+                suggestionText += String(num) + ". " + suggestions[i]
+                num+=1
+            }
+        }
+        
+        //combine symptom to output
+        output += "Symptoms: " + symptomText + "\n\n"
+        
+        //add risk
+        if (risk==1){
+            output += "Risk: HIGH RISK\n"
+        }
+        else if (risk==2){
+            output += "Risk: Medium Risk\n"
+        }
+        else if (risk==3){
+            output += "Risk: Low Risk\n"
+        }
+        
+        //combine suggestion to output
+        output += "Suggestions:\n" + suggestionText + "\n\n"
+        
+        return output
     }
     
     
@@ -108,26 +164,8 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             
-            
-            
-            
-            
-//            self.label.text = "Temperature: " + text! + "°F\nSymptoms: Fever, Cough\nRisk: High Risk\n\nSuggestion:\n1.Take a fever reducer.\n2.Drink warm beverages, Breathe in steam.\n\nClosest Testing Center:\n3850 Barranca Pkwy KL, Irvine, CA 92606"
-//            self.label.text = "Temperature: " + text! + "°F\nSymptoms: None\nRisk: Low Risk\n\nSuggestion:\n1.Stay home and keep 6ft from others" + String(arr![0])
-            
-
-            let a = String(arr![0])
-            let b = String(arr![1])
-            let c = String(arr![2])
-            let d = String(arr![3])
-            let e = String(arr![4])
-            let f = String(arr![5])
-            let g = String(arr![6])
-            let h = String(arr![7])
-            
-            
-            
-            self.label.text = "Temperature: " + text! + "°F\nSymptoms: None\nRisk: Low Risk\n\nSuggestion:\n1.Stay home and keep 6ft from others\n" + a + b + c + d + e + f + g + h
+            //give recommendation
+            self.label.text = self.giveSuggestion(temperature: text!, symptoms: arr!, risk: risk)
             
             
             
