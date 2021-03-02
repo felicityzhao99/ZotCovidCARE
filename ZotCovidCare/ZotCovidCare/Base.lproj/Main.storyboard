@@ -205,7 +205,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDK-Db-Gnn"/>
-                        <color key="backgroundColor" red="0.5" green="0.71397772289999994" blue="0.75263522360000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.60440152879999998" green="0.7563453913" blue="0.78824406859999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="g95-vV-e04" firstAttribute="top" secondItem="wDK-Db-Gnn" secondAttribute="top" id="Udx-nN-MdR"/>
                             <constraint firstItem="g95-vV-e04" firstAttribute="leading" secondItem="wDK-Db-Gnn" secondAttribute="leading" id="XbU-Uk-KAv"/>
@@ -351,7 +351,10 @@
                     <navigationItem key="navigationItem" title="Personal Health" id="80V-kk-mxf"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="checkUp" destination="fCy-VU-LD5" id="uzE-46-laM"/>
+                        <outlet property="healthData" destination="YLl-q1-Yq7" id="ht0-Hu-mfp"/>
                         <outlet property="label" destination="jFs-kk-afY" id="Kzv-gc-Egs"/>
+                        <outlet property="newCheckup" destination="gnI-PA-pu2" id="1la-W5-bWD"/>
                         <outlet property="tableViewHealth" destination="CCj-lD-LOp" id="W2c-by-iLf"/>
                     </connections>
                 </viewController>

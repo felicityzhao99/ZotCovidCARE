@@ -22,17 +22,6 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    //when cell is tapped, place checkmark if cell is unchecked, remove checkmark if cell is checked
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-        }
-        else{
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-        }
-    }
-    
-    
 
     @IBOutlet var field: UITextField!
     public var completionHandler: ((String?,[Int]?)->Void)?
