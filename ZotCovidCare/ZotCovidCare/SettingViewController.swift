@@ -10,10 +10,10 @@ import UIKit
 class SettingViewController: UIViewController {
     var config = ["darkmode" : 0, "notification" : 0]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         darkModeInitialization()
-
         // Do any additional setup after loading the view.
     }
     
@@ -35,7 +35,7 @@ class SettingViewController: UIViewController {
             if config["darkmode"] == 1{
                 setBlack()
                 Outlet.setOn(true, animated: false)
-            }else{
+            }else if config["darkmode"] == 0{
                 setWhite()
             }
             return
@@ -53,7 +53,7 @@ class SettingViewController: UIViewController {
     }
     
     func setBlack(){
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.darkGray
         label.textColor = UIColor.white
         LabelReceive.textColor = UIColor.white
         versionNumber.textColor = UIColor.white
@@ -109,7 +109,7 @@ class SettingViewController: UIViewController {
 
         //For dark mode
         if Outlet.isOn == true{
-            vc.view.backgroundColor = .black
+            vc.view.backgroundColor = .darkGray
             txt.textColor = .white
             }
         else{
@@ -134,7 +134,7 @@ class SettingViewController: UIViewController {
 
         //For dark mode
         if Outlet.isOn == true{
-            vc.view.backgroundColor = .black
+            vc.view.backgroundColor = .darkGray
             txt.textColor = .white
             }
         else{

@@ -408,6 +408,7 @@
                     <navigationItem key="navigationItem" title="Covid Map" id="6Am-xC-EaJ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="mapLabel" destination="RHP-pc-UGE" id="zBV-8z-jRs"/>
                         <outlet property="mapView" destination="ZRm-JV-jnc" id="8NU-a4-36w"/>
                     </connections>
                 </viewController>
