@@ -10,16 +10,60 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController,CLLocationManagerDelegate {
+    //dict which records config.json whether to determine whether darkmode is on/off
+    var config = ["darkmode" : 0, "notification" : 0]
+    
+    @IBOutlet weak var mapLabel: UILabel!
     @IBOutlet var mapView:MKMapView!
     let loc_manager = CLLocationManager()
 
     override func viewDidLoad() {
+        darkModeInitialization()
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
+    
+    //For reading config json whether to determine whether darkmode is on/off
+    func darkModeInitialization()
+    {
+        guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
+
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            
+            let data = try Data(contentsOf: url)
+            let jsonData = try JSONSerialization.jsonObject(with: data, options: [])
+            if let dictFromJSON = jsonData as? [String : Int]{
+                config["darkmode"] = dictFromJSON["darkmode"]
+                config["notification"] = dictFromJSON["notification"]
+            } else {
+                print("json convert fail\n")
+            }
+            if config["darkmode"] == 1{
+                setBlack()
+            }else{
+                setWhite()
+            }
+            return
+        } catch {}
+    }
+    
+    func setBlack()
+    {
+        view.backgroundColor = UIColor.darkGray
+        mapLabel.textColor = UIColor.white
+    }
+    
+    func setWhite()
+    {
+        view.backgroundColor = UIColor.white
+        mapLabel.textColor = UIColor.black
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        darkModeInitialization()
         loc_manager.desiredAccuracy = kCLLocationAccuracyBest
         loc_manager.delegate = self
         loc_manager.requestWhenInUseAuthorization()

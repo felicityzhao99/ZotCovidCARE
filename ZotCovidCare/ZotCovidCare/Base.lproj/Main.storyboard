@@ -205,7 +205,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDK-Db-Gnn"/>
-                        <color key="backgroundColor" red="0.5" green="0.71397772289999994" blue="0.75263522360000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.60440152879999998" green="0.7563453913" blue="0.78824406859999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="g95-vV-e04" firstAttribute="top" secondItem="wDK-Db-Gnn" secondAttribute="top" id="Udx-nN-MdR"/>
                             <constraint firstItem="g95-vV-e04" firstAttribute="leading" secondItem="wDK-Db-Gnn" secondAttribute="leading" id="XbU-Uk-KAv"/>
@@ -351,7 +351,10 @@
                     <navigationItem key="navigationItem" title="Personal Health" id="80V-kk-mxf"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="checkUp" destination="fCy-VU-LD5" id="uzE-46-laM"/>
+                        <outlet property="healthData" destination="YLl-q1-Yq7" id="ht0-Hu-mfp"/>
                         <outlet property="label" destination="jFs-kk-afY" id="Kzv-gc-Egs"/>
+                        <outlet property="newCheckup" destination="gnI-PA-pu2" id="1la-W5-bWD"/>
                         <outlet property="tableViewHealth" destination="CCj-lD-LOp" id="W2c-by-iLf"/>
                     </connections>
                 </viewController>
@@ -364,11 +367,11 @@
             <objects>
                 <viewController id="Rup-Uw-Wza" customClass="MapViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SqF-f0-JdU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-pc-UGE">
-                                <rect key="frame" x="32" y="86" width="350" height="43"/>
+                                <rect key="frame" x="32" y="42" width="350" height="43"/>
                                 <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="tvU-nT-SpW"/>
@@ -378,13 +381,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-N5-mAi">
-                                <rect key="frame" x="32" y="540" width="362" height="227"/>
+                                <rect key="frame" x="32" y="535" width="362" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="Zwl-c0-HLl"/>
                                 </constraints>
                             </mapView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-JV-jnc">
-                                <rect key="frame" x="32" y="289" width="362" height="195"/>
+                                <rect key="frame" x="32" y="284" width="362" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="Mnt-5L-eVv"/>
                                 </constraints>
@@ -408,6 +411,7 @@
                     <navigationItem key="navigationItem" title="Covid Map" id="6Am-xC-EaJ"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="mapLabel" destination="RHP-pc-UGE" id="zBV-8z-jRs"/>
                         <outlet property="mapView" destination="ZRm-JV-jnc" id="8NU-a4-36w"/>
                     </connections>
                 </viewController>
@@ -475,7 +479,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBp-mN-XUs">
-                                        <rect key="frame" x="0.0" y="192" width="149" height="35"/>
+                                        <rect key="frame" x="0.0" y="192" width="149" height="47.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Safety and Privacy">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -485,7 +489,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l96-J3-oc2">
-                                        <rect key="frame" x="0.0" y="292" width="77" height="34"/>
+                                        <rect key="frame" x="0.0" y="304.5" width="77" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="About US">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -495,20 +499,15 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="qV9-zc-Jrw">
-                                        <rect key="frame" x="0.0" y="391" width="285" height="34"/>
+                                        <rect key="frame" x="0.0" y="403.5" width="284.5" height="21.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQt-g1-sK1">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6L-HY-Bwx">
+                                                <rect key="frame" x="0.0" y="0.0" width="129.5" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Version Number">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapButtonVersion" destination="SjZ-0X-ArR" eventType="touchUpInside" id="klp-wG-hUh"/>
-                                                </connections>
-                                            </button>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hr5-OY-w7l">
-                                                <rect key="frame" x="250" y="0.0" width="35" height="34"/>
+                                                <rect key="frame" x="249.5" y="0.0" width="35" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -537,7 +536,8 @@
                         <outlet property="VersionNum" destination="hr5-OY-w7l" id="aGp-oM-eQE"/>
                         <outlet property="label" destination="e4D-NE-3oO" id="S6q-Pw-7dD"/>
                         <outlet property="safetyLabel" destination="yBp-mN-XUs" id="88n-hb-ocI"/>
-                        <outlet property="versionLabel" destination="IQt-g1-sK1" id="yi3-0d-joR"/>
+                        <outlet property="versionNumber" destination="j6L-HY-Bwx" id="VJT-6K-A6A"/>
+                        <segue destination="Rup-Uw-Wza" kind="presentation" identifier="modeMap" id="Qwm-Cg-ZEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -660,6 +660,9 @@
             <point key="canvasLocation" x="405.79710144927537" y="1984.8214285714284"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qwm-Cg-ZEa"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cool-background" width="1200" height="580"/>
         <image name="first_covid_vaccinations_at_UCI" width="300" height="169"/>

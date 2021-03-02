@@ -15,6 +15,7 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)->Int{
         return symptoms.count
     }
+    
     //fill each cell with corresponding value of array index
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -31,7 +32,6 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
         }
     }
-    
     
 
     @IBOutlet var field: UITextField!

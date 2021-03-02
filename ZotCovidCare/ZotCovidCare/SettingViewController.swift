@@ -8,46 +8,93 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-
+    var config = ["darkmode" : 0, "notification" : 0]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        darkModeInitialization()
         // Do any additional setup after loading the view.
     }
+    
+    func darkModeInitialization()
+    {
+        guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
+
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let jsonData = try JSONSerialization.jsonObject(with: data, options: [])
+            if let dictFromJSON = jsonData as? [String : Int]{
+                config["darkmode"] = dictFromJSON["darkmode"]
+                config["notification"] = dictFromJSON["notification"]
+            } else {
+                print("json convert fail\n")
+            }
+            if config["darkmode"] == 1{
+                setBlack()
+                Outlet.setOn(true, animated: false)
+            }else if config["darkmode"] == 0{
+                setWhite()
+            }
+            return
+        } catch {}
+    }
+    
+    func setWhite(){
+        view.backgroundColor = UIColor.white
+        label.textColor = UIColor.black
+        LabelReceive.textColor = UIColor.black
+        VersionNum.textColor = UIColor.black
+        versionNumber.textColor = UIColor.black
+        AboutLabel.setTitleColor(.black, for: .normal)
+        safetyLabel.setTitleColor(.black, for: .normal)
+    }
+    
+    func setBlack(){
+        view.backgroundColor = UIColor.darkGray
+        label.textColor = UIColor.white
+        LabelReceive.textColor = UIColor.white
+        versionNumber.textColor = UIColor.white
+        VersionNum.textColor = UIColor.white
+        AboutLabel.setTitleColor(.white, for: .normal)
+        safetyLabel.setTitleColor(.white, for: .normal)
+    }
+    
     @IBOutlet weak var Outlet: UISwitch!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var LabelReceive: UILabel!
     @IBOutlet weak var AboutLabel: UIButton!
     @IBOutlet weak var safetyLabel: UIButton!
-    @IBOutlet weak var versionLabel: UIButton!
     @IBOutlet weak var VersionNum: UILabel!
     
+    @IBOutlet weak var versionNumber: UILabel!
     @IBOutlet weak var settingTitle: UINavigationItem!
+    
+    
     @IBAction func darkModeAction(){
+        
         if Outlet.isOn == true{
-            view.backgroundColor = UIColor.black
-            label.textColor = UIColor.white
-            LabelReceive.textColor = UIColor.white
-            VersionNum.textColor = UIColor.white
-            AboutLabel.setTitleColor(.white, for: .normal)
-            safetyLabel.setTitleColor(.white, for: .normal)
-            versionLabel.setTitleColor(.white, for: .normal)
-            
+            setBlack()
+            config["darkmode"] = 1
         }else{
-            view.backgroundColor = UIColor.white
-            label.textColor = UIColor.black
-            LabelReceive.textColor = UIColor.black
-            VersionNum.textColor = UIColor.black
-            AboutLabel.setTitleColor(.black, for: .normal)
-            safetyLabel.setTitleColor(.black, for: .normal)
-            versionLabel.setTitleColor(.black, for: .normal)
+            setWhite()
+            config["darkmode"] = 0
+        }
+        
+        guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
+
+        let url = URL(fileURLWithPath: path)
+        
+        let jsonData = try! JSONSerialization.data(withJSONObject: config, options: .prettyPrinted)
+        print(url)
+        do {
+            try jsonData.write(to: url)
+        } catch {
+            print("wirte fail")
         }
     }
-    
-    
-   
-    
-    
     
     
     @IBAction func didTapButtonSafety(){
@@ -62,7 +109,7 @@ class SettingViewController: UIViewController {
 
         //For dark mode
         if Outlet.isOn == true{
-            vc.view.backgroundColor = .black
+            vc.view.backgroundColor = .darkGray
             txt.textColor = .white
             }
         else{
@@ -87,7 +134,7 @@ class SettingViewController: UIViewController {
 
         //For dark mode
         if Outlet.isOn == true{
-            vc.view.backgroundColor = .black
+            vc.view.backgroundColor = .darkGray
             txt.textColor = .white
             }
         else{
@@ -100,30 +147,7 @@ class SettingViewController: UIViewController {
 
     }
     
-    @IBAction func didTapButtonVersion(){
-        let vc = UIViewController()
-        //Insert text and change text features
-        let txt = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        txt.text = "1.0.0"
     
-        txt.lineBreakMode = NSLineBreakMode.byWordWrapping
-        txt.numberOfLines = 0
-
-
-        //For dark mode
-        if Outlet.isOn == true{
-            vc.view.backgroundColor = .black
-            txt.textColor = .white
-            }
-        else{
-            vc.view.backgroundColor = .white
-            txt.textColor = .black
-            }
-        
-        vc.view.addSubview(txt)
-        navigationController?.pushViewController(vc, animated: true)
-
-    }
    
     
 
