@@ -141,6 +141,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         tableViewHealth.delegate = self
         tableViewHealth.dataSource = self
+        darkModeInitialization()
 
         // Do any additional setup after loading the view.
     }
