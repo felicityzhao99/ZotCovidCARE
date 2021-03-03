@@ -57,7 +57,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
     
     func setWhite()
     {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.systemYellow
         mapLabel.textColor = UIColor.black
     }
     

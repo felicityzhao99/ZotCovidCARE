@@ -652,7 +652,10 @@
                     </view>
                     <connections>
                         <outlet property="field" destination="rDJ-tx-MSJ" id="lM6-UG-78P"/>
+                        <outlet property="submit" destination="DHB-13-JwV" id="5Wy-Qe-585"/>
+                        <outlet property="symptomCheck" destination="PWY-uP-bNJ" id="hK6-1K-kLD"/>
                         <outlet property="tableView" destination="s3o-HZ-eWt" id="ney-aj-shS"/>
+                        <outlet property="temperatureCheck" destination="MoI-ah-0hS" id="L3U-sr-D3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBJ-E2-ahe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
