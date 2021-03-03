@@ -367,11 +367,11 @@
             <objects>
                 <viewController id="Rup-Uw-Wza" customClass="MapViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SqF-f0-JdU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-pc-UGE">
-                                <rect key="frame" x="32" y="42" width="350" height="43"/>
+                                <rect key="frame" x="32" y="86" width="350" height="43"/>
                                 <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="tvU-nT-SpW"/>
@@ -380,32 +380,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-N5-mAi">
-                                <rect key="frame" x="32" y="535" width="362" height="227"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6my-vo-MdH">
+                                <rect key="frame" x="20" y="187" width="364" height="222"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="227" id="Zwl-c0-HLl"/>
+                                    <constraint firstAttribute="height" constant="222" id="3hC-le-aoF"/>
                                 </constraints>
-                            </mapView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-JV-jnc">
-                                <rect key="frame" x="32" y="284" width="362" height="195"/>
+                                <state key="normal" title="Button" image="UCI_Map"/>
+                                <connections>
+                                    <segue destination="cNT-w6-6Ql" kind="show" id="jTv-ma-dla"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRW-Dl-oSA">
+                                <rect key="frame" x="20" y="496" width="374" height="275"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="195" id="Mnt-5L-eVv"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="222" id="3uy-Wz-2S8"/>
+                                    <constraint firstAttribute="height" constant="275" id="4h0-24-XVa"/>
                                 </constraints>
-                            </mapView>
+                                <state key="normal" title="Button" image="Irvine_Map"/>
+                                <connections>
+                                    <segue destination="oKH-Tm-bq8" kind="show" id="Tg4-sC-BLN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDi-hx-RQf"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="leading" secondItem="wDi-hx-RQf" secondAttribute="leading" constant="32" id="43s-NZ-Vws"/>
+                            <constraint firstItem="6my-vo-MdH" firstAttribute="top" secondItem="RHP-pc-UGE" secondAttribute="bottom" constant="58" id="44n-Ro-RCG"/>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="RHP-pc-UGE" secondAttribute="trailing" constant="32" id="BvM-Je-W7O"/>
-                            <constraint firstItem="wDi-hx-RQf" firstAttribute="bottom" secondItem="wI0-N5-mAi" secondAttribute="bottom" constant="46" id="GwM-Hu-FB0"/>
-                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="centerX" secondItem="SqF-f0-JdU" secondAttribute="centerX" constant="6" id="Hff-p9-Lx2"/>
+                            <constraint firstItem="cRW-Dl-oSA" firstAttribute="leading" secondItem="wDi-hx-RQf" secondAttribute="leading" constant="20" id="Fh7-zm-I7U"/>
                             <constraint firstItem="RHP-pc-UGE" firstAttribute="top" secondItem="wDi-hx-RQf" secondAttribute="top" constant="42" id="J2C-vi-4Ka"/>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RHP-pc-UGE" secondAttribute="trailing" id="PXt-EN-UWn"/>
+                            <constraint firstItem="6my-vo-MdH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RHP-pc-UGE" secondAttribute="trailing" id="Smx-Li-pe9"/>
+                            <constraint firstAttribute="trailing" secondItem="cRW-Dl-oSA" secondAttribute="trailing" constant="20" id="V7T-5J-ye0"/>
+                            <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="6my-vo-MdH" secondAttribute="trailing" constant="30" id="XB4-U5-wRt"/>
+                            <constraint firstItem="wDi-hx-RQf" firstAttribute="bottom" secondItem="cRW-Dl-oSA" secondAttribute="bottom" constant="100" id="aic-HO-Jos"/>
                             <constraint firstItem="RHP-pc-UGE" firstAttribute="leading" secondItem="SqF-f0-JdU" secondAttribute="leading" constant="32" id="fJf-2Z-pbG"/>
-                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="trailing" secondItem="wI0-N5-mAi" secondAttribute="trailing" id="gJE-wK-foi"/>
-                            <constraint firstItem="wI0-N5-mAi" firstAttribute="top" secondItem="ZRm-JV-jnc" secondAttribute="bottom" constant="56" id="nzx-NB-FzQ"/>
-                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="leading" secondItem="wI0-N5-mAi" secondAttribute="leading" id="pLX-4p-NKI"/>
+                            <constraint firstItem="6my-vo-MdH" firstAttribute="leading" secondItem="SqF-f0-JdU" secondAttribute="leading" constant="20" id="p5i-jI-IcJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Covid Map" id="6Am-xC-EaJ"/>
@@ -537,7 +547,6 @@
                         <outlet property="label" destination="e4D-NE-3oO" id="S6q-Pw-7dD"/>
                         <outlet property="safetyLabel" destination="yBp-mN-XUs" id="88n-hb-ocI"/>
                         <outlet property="versionNumber" destination="j6L-HY-Bwx" id="VJT-6K-A6A"/>
-                        <segue destination="Rup-Uw-Wza" kind="presentation" identifier="modeMap" id="Qwm-Cg-ZEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -662,18 +671,76 @@
             </objects>
             <point key="canvasLocation" x="405.79710144927537" y="1984.8214285714284"/>
         </scene>
+        <!--Irvine Map Controller-->
+        <scene sceneID="Ldt-dv-2be">
+            <objects>
+                <viewController id="oKH-Tm-bq8" customClass="IrvineMapController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eYB-1A-mrg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-N5-mAi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2bV-pF-Qav"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wI0-N5-mAi" firstAttribute="leading" secondItem="2bV-pF-Qav" secondAttribute="leading" id="4rh-GU-hd4"/>
+                            <constraint firstAttribute="bottom" secondItem="wI0-N5-mAi" secondAttribute="bottom" id="X9o-tJ-VXd"/>
+                            <constraint firstItem="wI0-N5-mAi" firstAttribute="centerX" secondItem="eYB-1A-mrg" secondAttribute="centerX" id="g5g-gv-lmo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IFq-Zz-Yxh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OGE-u9-JHo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="1993.5267857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x2Q-a9-nQN">
+            <objects>
+                <viewController id="cNT-w6-6Ql" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Zh-PY-22U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-JV-jnc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="842"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="842" id="Mnt-5L-eVv"/>
+                                    <constraint firstAttribute="width" constant="414" id="WPu-3q-hmV"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wou-OE-hgh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="top" secondItem="Wou-OE-hgh" secondAttribute="top" id="3L8-CV-lgI"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="top" secondItem="7Zh-PY-22U" secondAttribute="top" id="5UH-6h-3e9"/>
+                            <constraint firstAttribute="trailing" secondItem="ZRm-JV-jnc" secondAttribute="trailing" id="7VO-UY-xlC"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="leading" secondItem="7Zh-PY-22U" secondAttribute="leading" id="GoQ-bf-ZhE"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="top" secondItem="Wou-OE-hgh" secondAttribute="top" id="JyX-01-GZN"/>
+                            <constraint firstItem="ZRm-JV-jnc" firstAttribute="top" secondItem="Wou-OE-hgh" secondAttribute="top" id="ghx-pr-zjT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DL0-Vr-Pxc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Bm-Z4-o1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075" y="1994"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Qwm-Cg-ZEa"/>
-    </inferredMetricsTieBreakers>
     <resources>
+        <image name="Irvine_Map" width="512" height="196"/>
+        <image name="UCI_Map" width="768" height="492"/>
         <image name="cool-background" width="1200" height="580"/>
         <image name="first_covid_vaccinations_at_UCI" width="300" height="169"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="logo" width="230" height="170"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
-        <image name="smiley" catalog="system" width="128" height="121"/>
+        <image name="smiley" catalog="system" width="32" height="32"/>
         <image name="virus_felgner_showing_microarrays" width="300" height="214"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
