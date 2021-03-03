@@ -36,13 +36,69 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet var field: UITextField!
     public var completionHandler: ((String?,[Int]?)->Void)?
+    //dict which records config.json whether to determine whether darkmode is on/off
+    var config = ["darkmode" : 0, "notification" : 0]
     
-    
-    
+    @IBOutlet weak var symptomCheck: UILabel!
+    @IBOutlet weak var temperatureCheck: UILabel!
+    @IBOutlet weak var submit: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        darkModeInitialization()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    //For reading config json whether to determine whether darkmode is on/off
+    func darkModeInitialization()
+    {
+        guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
+
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            
+            let data = try Data(contentsOf: url)
+            let jsonData = try JSONSerialization.jsonObject(with: data, options: [])
+            if let dictFromJSON = jsonData as? [String : Int]{
+                config["darkmode"] = dictFromJSON["darkmode"]
+                config["notification"] = dictFromJSON["notification"]
+            } else {
+                print("json convert fail\n")
+            }
+            if config["darkmode"] == 1{
+                setBlack()
+            }else{
+                setWhite()
+            }
+            return
+        } catch {}
+    }
+    
+    func setBlack()
+    {
+        view.backgroundColor = UIColor.darkGray
+        submit.setTitleColor(UIColor.white, for: .normal)
+        temperatureCheck.textColor = UIColor.white
+        symptomCheck.textColor = UIColor.white
+        tableView.backgroundColor = UIColor(red:0.36078431370000003, green:0.38823529410000002, blue:0.4039215686, alpha:1.0)
+        let cells = tableView.visibleCells
+        for cell in cells{
+            cell.accessoryView?.backgroundColor = UIColor.green
+        }
+    }
+    func setWhite()
+    {
+        view.backgroundColor = UIColor.white
+        submit.setTitleColor(UIColor.blue, for: .normal)
+        temperatureCheck.textColor = UIColor.black
+        symptomCheck.textColor = UIColor.black
+    }
+    
+    //Keep checking Dark mode status even if this page doesn't receive any user actions.
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        darkModeInitialization()
     }
     
     @IBAction func didTapSubmit(){
@@ -59,6 +115,7 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         completionHandler?(field.text, arr)
+        darkModeInitialization()
         dismiss(animated: true, completion: nil)
     }
     
