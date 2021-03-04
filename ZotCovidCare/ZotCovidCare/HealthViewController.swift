@@ -182,10 +182,10 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func setWhite()
     {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
         checkUp.textColor = UIColor.black
         healthData.textColor = UIColor.black
-        newCheckup.setTitleColor(UIColor.cyan, for: .normal)
+        newCheckup.setTitleColor(UIColor.systemBlue, for: .normal)
     }
     
     //Keep checking Dark mode status even if this page doesn't receive any user actions.
@@ -212,7 +212,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.label.textColor = .systemYellow
             }
             else if (risk==3){
-                self.label.textColor = .systemGreen
+                self.label.textColor = UIColor.green
             }
             
             

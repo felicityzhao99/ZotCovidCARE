@@ -91,6 +91,7 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.backgroundColor = UIColor.white
         submit.setTitleColor(UIColor.blue, for: .normal)
         temperatureCheck.textColor = UIColor.black
+        view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
         symptomCheck.textColor = UIColor.black
     }
     

@@ -328,7 +328,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wFc-0h-kop"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.87193454041772955" green="0.95800065021125635" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jFs-kk-afY" firstAttribute="top" secondItem="wFc-0h-kop" secondAttribute="top" constant="71" id="4dF-Gi-m5d"/>
                             <constraint firstItem="wFc-0h-kop" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fCy-VU-LD5" secondAttribute="trailing" symbolic="YES" id="B9g-ya-lhx"/>
@@ -367,11 +367,11 @@
             <objects>
                 <viewController id="Rup-Uw-Wza" customClass="MapViewController" customModule="ZotCovidCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SqF-f0-JdU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-pc-UGE">
-                                <rect key="frame" x="32" y="42" width="350" height="43"/>
+                                <rect key="frame" x="32" y="86" width="350" height="43"/>
                                 <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="tvU-nT-SpW"/>
@@ -381,20 +381,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-N5-mAi">
-                                <rect key="frame" x="32" y="535" width="362" height="227"/>
+                                <rect key="frame" x="32" y="540" width="362" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="Zwl-c0-HLl"/>
                                 </constraints>
                             </mapView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-JV-jnc">
-                                <rect key="frame" x="32" y="284" width="362" height="195"/>
+                                <rect key="frame" x="32" y="289" width="362" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="Mnt-5L-eVv"/>
                                 </constraints>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDi-hx-RQf"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" red="0.78834066585618623" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZRm-JV-jnc" firstAttribute="leading" secondItem="wDi-hx-RQf" secondAttribute="leading" constant="32" id="43s-NZ-Vws"/>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="RHP-pc-UGE" secondAttribute="trailing" constant="32" id="BvM-Je-W7O"/>
@@ -519,7 +519,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fT5-SL-dGH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.83243005454134777" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fT5-SL-dGH" firstAttribute="trailing" secondItem="z3g-2W-D5H" secondAttribute="trailing" constant="50" id="93H-0C-5ZL"/>
                             <constraint firstItem="z3g-2W-D5H" firstAttribute="leading" secondItem="fT5-SL-dGH" secondAttribute="leading" constant="50" id="Fzi-cC-EIj"/>
@@ -537,7 +537,6 @@
                         <outlet property="label" destination="e4D-NE-3oO" id="S6q-Pw-7dD"/>
                         <outlet property="safetyLabel" destination="yBp-mN-XUs" id="88n-hb-ocI"/>
                         <outlet property="versionNumber" destination="j6L-HY-Bwx" id="VJT-6K-A6A"/>
-                        <segue destination="Rup-Uw-Wza" kind="presentation" identifier="modeMap" id="Qwm-Cg-ZEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-h5-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -663,9 +662,6 @@
             <point key="canvasLocation" x="405.79710144927537" y="1984.8214285714284"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Qwm-Cg-ZEa"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="cool-background" width="1200" height="580"/>
         <image name="first_covid_vaccinations_at_UCI" width="300" height="169"/>
@@ -686,9 +682,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
