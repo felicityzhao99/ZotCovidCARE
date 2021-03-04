@@ -22,6 +22,7 @@
 		6758542425DF29A500CA4D36 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6758542325DF29A500CA4D36 /* SearchViewController.swift */; };
 		67F629DF25EA135A002324BB /* oc_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 67F629DE25EA1359002324BB /* oc_json.json */; };
 		9954C78D25EFFA400001D788 /* IrvineMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9954C78C25EFFA400001D788 /* IrvineMapController.swift */; };
+		9954C79825F0A55D0001D788 /* UCIMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9954C79725F0A55C0001D788 /* UCIMapController.swift */; };
 		9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966E9F625CD1222003EE21D /* MapViewController.swift */; };
 		AC6B36E925EDEAF400203DA0 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = AC6B36E825EDEAF400203DA0 /* config.json */; };
 		ACD44DD025DCFC170057898A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD44DCF25DCFC170057898A /* SettingViewController.swift */; };
@@ -67,6 +68,7 @@
 		6758542325DF29A500CA4D36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		67F629DE25EA1359002324BB /* oc_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = oc_json.json; path = ../../CovidCrawler/oc_json.json; sourceTree = "<group>"; };
 		9954C78C25EFFA400001D788 /* IrvineMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrvineMapController.swift; sourceTree = "<group>"; };
+		9954C79725F0A55C0001D788 /* UCIMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIMapController.swift; sourceTree = "<group>"; };
 		9966E9F625CD1222003EE21D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AC6B36E825EDEAF400203DA0 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		ACD44DCF25DCFC170057898A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				673453F125DEE78B00914B68 /* GeneralViewController.swift */,
 				6758542325DF29A500CA4D36 /* SearchViewController.swift */,
 				9954C78C25EFFA400001D788 /* IrvineMapController.swift */,
+				9954C79725F0A55C0001D788 /* UCIMapController.swift */,
 			);
 			path = ZotCovidCare;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				673453F225DEE78B00914B68 /* GeneralViewController.swift in Sources */,
 				9954C78D25EFFA400001D788 /* IrvineMapController.swift in Sources */,
 				28454E0A25C3D52F00269EDC /* SceneDelegate.swift in Sources */,
+				9954C79825F0A55D0001D788 /* UCIMapController.swift in Sources */,
 				28A0285025CB7C3E001AB519 /* HealthViewController.swift in Sources */,
 				9966E9F725CD1222003EE21D /* MapViewController.swift in Sources */,
 				ACD44DD025DCFC170057898A /* SettingViewController.swift in Sources */,
