@@ -14,13 +14,85 @@ import HealthKit
 //    }
 //}
 
-let healthKitStore:HKHealthStore = HKHealthStore()
+//let healthKitStore:HKHealthStore = HKHealthStore()
 
 class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableViewHealth.delegate = self
+        tableViewHealth.dataSource = self
+        darkModeInitialization()
+        authorizeHealthKit()
+        
+        
+        
+        
+
+        // Do any additional setup after loading the view.
+    }
+    
+    // health permission
+    let healthStore = HKHealthStore()
+    
+    func authorizeHealthKit(){
+        let read = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!,
+                        HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
+                        HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
+                        HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!,
+                        HKObjectType.characteristicType(forIdentifier: .biologicalSex)!])
+        let share = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!])
+        healthStore.requestAuthorization(toShare: share, read: read) {(chk,error) in
+            if (chk){
+                print("permission granted")
+                self.getHealthInfo()
+                
+                //reload table view to display newest health info
+                self.tableViewHealth.reloadData()
+            }
+        }
+    }
+    
+    //global variable to store health information retrieved, used later in tableview
+    var sleep = ""
+    var steps = ""
+    var exercise = ""
+    
+    func getHealthInfo(){
+        guard let stepCount = HKObjectType.quantityType(forIdentifier: .stepCount) else{
+            return
+        }
+        //get last week's info
+        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        let sortDescriptor = NSSortDescriptor(key:HKSampleSortIdentifierStartDate, ascending: false)//descending order, get last day
+        
+        
+        let query = HKSampleQuery(sampleType: stepCount, predicate: predicate, limit:
+            Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]){(sample,result,error) in
+            guard error==nil else{
+                return
+            }
+            let data = result![0] as! HKQuantitySample
+            let unit = HKUnit(from: "count")
+            self.steps = String(Int(data.quantity.doubleValue(for: unit))) + " steps"
+            print("Step Count \(self.steps)")
+            
+        }
+        
+        healthStore.execute(query)
+        
+        
+    }
+    
+    
+    
+    
+    
+    // health tableview
+    
     @IBOutlet var tableViewHealth: UITableView!
    
-    
     let healthArr = ["Sleep", "Steps", "Exercise Minutes"]
     
     func tableView(_ tableViewHealth: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,9 +101,24 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableViewHealth: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellHealth = tableViewHealth.dequeueReusableCell(withIdentifier: "cellHealth", for: indexPath)
-        cellHealth.textLabel?.text = healthArr[indexPath.row]
-        return cellHealth
+        if (indexPath.row==0){
+            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.sleep
+            return cellHealth
+        }
+        else if (indexPath.row==1){
+            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.steps
+            return cellHealth
+        }
+        else{
+            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.exercise
+            return cellHealth
+        }
+        
+        
     }
+    
+    
+    
     
     
     
@@ -129,7 +216,49 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
+    @IBAction func didTapButtonCheckUp(){
+        let vcCheckup = storyboard?.instantiateViewController(identifier: "checkup") as! CheckUpViewController
+        vcCheckup.modalPresentationStyle = .fullScreen
+        vcCheckup.completionHandler = { text,arr in
+            
+            //default text setting
+            self.label.textAlignment = .left
+            
+            //predict risk, set text color according to risk
+            let risk = self.predictRisk(temperature: text!, symptoms: arr!)
+            if (risk==1){
+                self.label.textColor = .systemRed
+            }
+            else if (risk==2){
+                self.label.textColor = .systemYellow
+            }
+            else if (risk==3){
+                self.label.textColor = .systemGreen
+            }
+            
+            
+            //give recommendation
+            self.label.text = self.giveSuggestion(temperature: text!, symptoms: arr!, risk: risk)
+            
+            
+            
+        }
+        darkModeInitialization()
+        present(vcCheckup,animated: true)
+        
+    }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //dark mode
     @IBOutlet var label: UILabel!
     @IBOutlet weak var checkUp: UILabel!
     @IBOutlet weak var healthData: UILabel!
@@ -137,15 +266,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //dict which records config.json whether to determine whether darkmode is on/off
     var config = ["darkmode" : 0, "notification" : 0]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableViewHealth.delegate = self
-        tableViewHealth.dataSource = self
-        darkModeInitialization()
 
-        // Do any additional setup after loading the view.
-    }
-    
     //For reading config json whether to determine whether darkmode is on/off
     func darkModeInitialization()
     {
@@ -193,38 +314,6 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     {
         super.viewDidAppear(animated)
         darkModeInitialization()
-    }
-    
-    @IBAction func didTapButtonCheckUp(){
-        let vcCheckup = storyboard?.instantiateViewController(identifier: "checkup") as! CheckUpViewController
-        vcCheckup.modalPresentationStyle = .fullScreen
-        vcCheckup.completionHandler = { text,arr in
-            
-            //default text setting
-            self.label.textAlignment = .left
-            
-            //predict risk, set text color according to risk
-            let risk = self.predictRisk(temperature: text!, symptoms: arr!)
-            if (risk==1){
-                self.label.textColor = .systemRed
-            }
-            else if (risk==2){
-                self.label.textColor = .systemYellow
-            }
-            else if (risk==3){
-                self.label.textColor = UIColor.green
-            }
-            
-            
-            //give recommendation
-            self.label.text = self.giveSuggestion(temperature: text!, symptoms: arr!, risk: risk)
-            
-            
-            
-        }
-        darkModeInitialization()
-        present(vcCheckup,animated: true)
-        
     }
     
     

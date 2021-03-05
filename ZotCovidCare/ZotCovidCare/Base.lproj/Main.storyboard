@@ -232,12 +232,12 @@
         <!--Map-->
         <scene sceneID="Hdi-U7-Ajp">
             <objects>
-                <navigationController navigationBarHidden="YES" id="2ZB-UW-xSA" sceneMemberID="viewController">
+                <navigationController id="2ZB-UW-xSA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="8kx-x2-UcD">
                         <color key="badgeColor" red="0.602715373" green="0.602715373" blue="0.82502380630000005" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjk-HO-4r7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -371,7 +371,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-pc-UGE">
-                                <rect key="frame" x="32" y="86" width="350" height="43"/>
+                                <rect key="frame" x="32" y="130" width="350" height="43"/>
                                 <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="tvU-nT-SpW"/>
@@ -381,7 +381,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6my-vo-MdH">
-                                <rect key="frame" x="20" y="187" width="364" height="222"/>
+                                <rect key="frame" x="20" y="231" width="364" height="222"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="222" id="3hC-le-aoF"/>
                                 </constraints>
@@ -391,7 +391,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRW-Dl-oSA">
-                                <rect key="frame" x="20" y="449" width="374" height="280"/>
+                                <rect key="frame" x="20" y="493" width="374" height="236"/>
                                 <state key="normal" title="Button" image="Irvine_Map"/>
                                 <connections>
                                     <segue destination="oKH-Tm-bq8" kind="show" id="Tg4-sC-BLN"/>
@@ -416,7 +416,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Covid Map" id="6Am-xC-EaJ"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="mapLabel" destination="RHP-pc-UGE" id="zBV-8z-jRs"/>
                         <outlet property="mapView" destination="ZRm-JV-jnc" id="8NU-a4-36w"/>
@@ -722,7 +722,7 @@
         <image name="logo" width="230" height="170"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
-        <image name="smiley" catalog="system" width="32" height="32"/>
+        <image name="smiley" catalog="system" width="128" height="121"/>
         <image name="virus_felgner_showing_microarrays" width="300" height="214"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
