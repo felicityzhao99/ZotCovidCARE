@@ -51,6 +51,12 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please allow to see current location</string>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>Allow health information usage</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Allow health information usage</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Allow health information usage</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
