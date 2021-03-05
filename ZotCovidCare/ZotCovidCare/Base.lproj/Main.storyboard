@@ -722,7 +722,7 @@
         <image name="logo" width="230" height="170"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
-        <image name="smiley" catalog="system" width="32" height="32"/>
+        <image name="smiley" catalog="system" width="128" height="121"/>
         <image name="virus_felgner_showing_microarrays" width="300" height="214"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
