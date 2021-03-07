@@ -45,10 +45,16 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         healthStore.requestAuthorization(toShare: share, read: read) {(chk,error) in
             if (chk){
                 print("permission granted")
-                self.getHealthInfo()
-                
-                //reload table view to display newest health info
-                self.tableViewHealth.reloadData()
+//
+//                //reload table view to display newest health info
+//                self.tableViewHealth.reloadData()
+                self.getSteps { (result) in
+                    DispatchQueue.main.async {
+                        let stepCount = Int(result)
+                        self.steps = String(stepCount) + " steps"
+                        self.tableViewHealth.reloadData()
+                    }
+                }
             }
         }
     }
@@ -58,26 +64,40 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var steps = ""
     var exercise = ""
     
-    func getHealthInfo(){
-        guard let stepCount = HKObjectType.quantityType(forIdentifier: .stepCount) else{
-            return
-        }
-        //get last week's info
-        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
-        let sortDescriptor = NSSortDescriptor(key:HKSampleSortIdentifierStartDate, ascending: false)//descending order, get last day
-        
-        
-        let query = HKSampleQuery(sampleType: stepCount, predicate: predicate, limit:
-            Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]){(sample,result,error) in
-            guard error==nil else{
+    func getSteps(completion: @escaping (Double) -> Void){
+        let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+
+        // get the start of the day
+        let date = Date()
+        let startDate = Calendar.current.startOfDay(for: date)
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+        var interval = DateComponents()
+        interval.day = 1
+
+        let query = HKStatisticsCollectionQuery(
+            quantityType: stepsCount!,
+            quantitySamplePredicate: predicate,
+            options: [.cumulativeSum],
+            anchorDate: startDate as Date,
+            intervalComponents:interval
+        )
+
+        query.initialResultsHandler = { query, results, error in
+            if error != nil { // handle error
                 return
             }
-            let data = result![0] as! HKQuantitySample
-            let unit = HKUnit(from: "count")
-            self.steps = String(Int(data.quantity.doubleValue(for: unit))) + " steps"
-            print("Step Count \(self.steps)")
-            
+
+            if let sum = results{
+                sum.enumerateStatistics(from: startDate, to: date) {
+                    statistics, stop in
+                    if let quantity = statistics.sumQuantity() {
+                        let steps = quantity.doubleValue(for: HKUnit.count())
+                        print("Steps = \(steps)")
+                        completion(steps)
+                    }
+                }
+            }
         }
         
         healthStore.execute(query)
