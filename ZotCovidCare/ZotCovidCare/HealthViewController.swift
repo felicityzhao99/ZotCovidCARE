@@ -7,14 +7,7 @@
 import UIKit
 import HealthKit
 
-//struct ContentView: View{
-//    private var healthStore: HealthStore?
-//    init(){
-//        healthStore = HealthStore()
-//    }
-//}
 
-//let healthKitStore:HKHealthStore = HKHealthStore()
 
 class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -24,45 +17,52 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableViewHealth.dataSource = self
         darkModeInitialization()
         authorizeHealthKit()
-        
-        
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
-    // health permission
+
     let healthStore = HKHealthStore()
+    //global variable to store health information retrieved, used later in tableview
+    var sleep = ""
+    var steps = ""
+    var exercise = ""
     
+    // healthkit authorization
     func authorizeHealthKit(){
         let read = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!,
                         HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
                         HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
                         HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!,
                         HKObjectType.characteristicType(forIdentifier: .biologicalSex)!])
-        let share = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!])
+        let share = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!,
+                         HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
+                         HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!])
+        
         healthStore.requestAuthorization(toShare: share, read: read) {(chk,error) in
             if (chk){
                 print("permission granted")
-//
-//                //reload table view to display newest health info
-//                self.tableViewHealth.reloadData()
+
                 self.getSteps { (result) in
                     DispatchQueue.main.async {
                         let stepCount = Int(result)
                         self.steps = String(stepCount) + " steps"
+                        //reload table view to display newest health info
                         self.tableViewHealth.reloadData()
                     }
                 }
+                self.getExerciseMinutes{ (result) in
+                    DispatchQueue.main.async {
+                        let exerciseMinutes = Double(result)
+                        self.exercise = String(exerciseMinutes) + " minutes"
+                        //reload table view to display newest health info
+                        self.tableViewHealth.reloadData()
+                    }
+                }
+                
+                
             }
         }
     }
     
-    //global variable to store health information retrieved, used later in tableview
-    var sleep = ""
-    var steps = ""
-    var exercise = ""
     
     func getSteps(completion: @escaping (Double) -> Void){
         let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
@@ -92,7 +92,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 sum.enumerateStatistics(from: startDate, to: date) {
                     statistics, stop in
                     if let quantity = statistics.sumQuantity() {
-                        let steps = quantity.doubleValue(for: HKUnit.count())
+                        let steps = quantity.doubleValue(for: HKUnit.count())//count is unit for steps
                         print("Steps = \(steps)")
                         completion(steps)
                     }
@@ -101,11 +101,46 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         healthStore.execute(query)
-        
-        
     }
     
-    
+    func getExerciseMinutes(completion: @escaping (Double) -> Void){
+        let exerciseMinutes = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)
+
+        // get the start of the day
+        let date = Date()
+        let startDate = Calendar.current.startOfDay(for: date)
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+        var interval = DateComponents()
+        interval.day = 1
+
+        let query = HKStatisticsCollectionQuery(
+            quantityType: exerciseMinutes!,
+            quantitySamplePredicate: predicate,
+            options: [.cumulativeSum],
+            anchorDate: startDate as Date,
+            intervalComponents:interval
+        )
+
+        query.initialResultsHandler = { query, results, error in
+            if error != nil { // handle error
+                return
+            }
+
+            if let sum = results{
+                sum.enumerateStatistics(from: startDate, to: date) {
+                    statistics, stop in
+                    if let quantity = statistics.sumQuantity() {
+                        let steps = quantity.doubleValue(for: HKUnit.minute()) //minute is unit for exercise minutes
+                        print("Steps = \(steps)")
+                        completion(steps)
+                    }
+                }
+            }
+        }
+        
+        healthStore.execute(query)
+    }
     
     
     
