@@ -24,20 +24,17 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //global variable to store health information retrieved, used later in tableview
     var sleep = ""
     var steps = ""
-    var exercise = ""
+    var distance = ""
     
     // healthkit authorization
     func authorizeHealthKit(){
         let read = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!,
-                        HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
+                        HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
                         HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
                         HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!,
                         HKObjectType.characteristicType(forIdentifier: .biologicalSex)!])
-        let share = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!,
-                         HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
-                         HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!])
         
-        healthStore.requestAuthorization(toShare: share, read: read) {(chk,error) in
+        healthStore.requestAuthorization(toShare: nil, read: read) {(chk,error) in
             if (chk){
                 print("permission granted")
 
@@ -49,10 +46,21 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         self.tableViewHealth.reloadData()
                     }
                 }
-                self.getExerciseMinutes{ (result) in
+                self.getDistance{ (result) in
                     DispatchQueue.main.async {
-                        let exerciseMinutes = Double(result)
-                        self.exercise = String(exerciseMinutes) + " minutes"
+                        let distanceWR = Double(result)
+                        self.distance = String(distanceWR) + " miles"
+                        //reload table view to display newest health info
+                        self.tableViewHealth.reloadData()
+                    }
+                }
+                self.getSleep{ (result) in
+                    DispatchQueue.main.async {
+                        let seconds = Double(result)
+                        //convert to hours and minutes
+                        let hours = Int(seconds) / 3600
+                        let minutes = Int(seconds) % 3600 / 60
+                        self.sleep = String(hours) + " hours " + String(minutes) + " minutes"
                         //reload table view to display newest health info
                         self.tableViewHealth.reloadData()
                     }
@@ -103,8 +111,8 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         healthStore.execute(query)
     }
     
-    func getExerciseMinutes(completion: @escaping (Double) -> Void){
-        let exerciseMinutes = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)
+    func getDistance(completion: @escaping (Double) -> Void){
+        let distance = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)
 
         // get the start of the day
         let date = Date()
@@ -115,7 +123,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         interval.day = 1
 
         let query = HKStatisticsCollectionQuery(
-            quantityType: exerciseMinutes!,
+            quantityType: distance!,
             quantitySamplePredicate: predicate,
             options: [.cumulativeSum],
             anchorDate: startDate as Date,
@@ -131,9 +139,9 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 sum.enumerateStatistics(from: startDate, to: date) {
                     statistics, stop in
                     if let quantity = statistics.sumQuantity() {
-                        let steps = quantity.doubleValue(for: HKUnit.minute()) //minute is unit for exercise minutes
-                        print("Steps = \(steps)")
-                        completion(steps)
+                        let d = quantity.doubleValue(for: HKUnit.mile()) //mile is unit for distance
+                        print("Distance = \(d)")
+                        completion(d)
                     }
                 }
             }
@@ -142,13 +150,40 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         healthStore.execute(query)
     }
     
+    func getSleep(completion: @escaping (Double) -> Void){
+        guard let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) else {
+            return }
+
+        let endDate = Date() //today
+        let startDate = Calendar.current.date(byAdding: .day, value: -1, to: Date()) //start from the last day
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictEndDate)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)//sorted from latest to earliest
+
+        let query = HKSampleQuery(sampleType: sleepType, predicate: predicate, limit: 30, sortDescriptors: [sortDescriptor]) {
+                        (query, samples, error) in
+                guard error == nil, samples == samples as? [HKCategorySample] else {
+                    return
+            }
+            //get the last sleep data
+//            let hours = samples![0].endDate.timeIntervalSince(samples![0].startDate) / 60 / 60
+            let seconds = samples![0].endDate.timeIntervalSince(samples![0].startDate)
+            print("Sleep = \(seconds)")
+            completion(seconds)
+
+        }
+        healthStore.execute(query)
+    }
+    
+    
+    
     
     
     // health tableview
     
     @IBOutlet var tableViewHealth: UITableView!
    
-    let healthArr = ["Sleep", "Steps", "Exercise Minutes"]
+    let healthArr = ["Sleep", "Steps", "Distance"]
     
     func tableView(_ tableViewHealth: UITableView, numberOfRowsInSection section: Int) -> Int {
         return healthArr.count
@@ -165,7 +200,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return cellHealth
         }
         else{
-            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.exercise
+            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.distance
             return cellHealth
         }
         
