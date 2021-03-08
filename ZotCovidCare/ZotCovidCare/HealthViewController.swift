@@ -165,6 +165,10 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 guard error == nil, samples == samples as? [HKCategorySample] else {
                     return
             }
+            //if no sleep data is available
+            if samples!.count == 0{
+                return
+            }
             //get the last sleep data
 //            let hours = samples![0].endDate.timeIntervalSince(samples![0].startDate) / 60 / 60
             let seconds = samples![0].endDate.timeIntervalSince(samples![0].startDate)
