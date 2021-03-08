@@ -34,9 +34,7 @@
         <scene sceneID="rXv-Jt-Bzt">
             <objects>
                 <navigationController navigationBarHidden="YES" id="blG-FG-uoc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="General" image="smiley" catalog="system" id="moe-US-odo">
-                        <color key="badgeColor" red="0.60271537303924561" green="0.60271537303924561" blue="0.82502380625842364" alpha="1" colorSpace="calibratedRGB"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="General" image="smiley" catalog="system" id="moe-US-odo"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LIm-co-w1Y">
                         <autoresizingMask key="autoresizingMask"/>
@@ -205,7 +203,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDK-Db-Gnn"/>
-                        <color key="backgroundColor" red="0.60440152879999998" green="0.7563453913" blue="0.78824406859999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.5" green="0.71397772289999994" blue="0.75263522360000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="g95-vV-e04" firstAttribute="top" secondItem="wDK-Db-Gnn" secondAttribute="top" id="Udx-nN-MdR"/>
                             <constraint firstItem="g95-vV-e04" firstAttribute="leading" secondItem="wDK-Db-Gnn" secondAttribute="leading" id="XbU-Uk-KAv"/>
@@ -216,11 +214,16 @@
                     <navigationItem key="navigationItem" title="Covid Updates" id="Iha-9O-UCY"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="ContentView" destination="3BJ-ec-0r3" id="LcV-ep-cCu"/>
                         <outlet property="DashboardView" destination="59u-zq-gbi" id="VDs-zv-nMO"/>
+                        <outlet property="IrvineCasesLabel" destination="Blf-TJ-SJB" id="YgZ-3O-4tn"/>
+                        <outlet property="LatestNewsLabel" destination="bvJ-Y5-Pui" id="Scb-pv-3zu"/>
                         <outlet property="NewsOneButton" destination="SIp-gh-0bB" id="FGe-iE-nZN"/>
                         <outlet property="NewsOneLabel" destination="IaX-hB-YRP" id="JJv-85-B6r"/>
                         <outlet property="NewsTwoButton" destination="k66-As-9xr" id="i3s-Ef-iTr"/>
                         <outlet property="NewsTwoLabel" destination="J2W-wG-LAw" id="Vfi-A6-IYD"/>
+                        <outlet property="StatisticsLabel" destination="uxY-xI-s4g" id="lsa-bY-8Qx"/>
+                        <outlet property="UCIrvineDashboardLabel" destination="V6V-Cm-Ow9" id="vgc-qO-KD1"/>
                         <outlet property="ViewMoreButton" destination="uY4-2z-WTL" id="NeK-cM-LIu"/>
                         <outlet property="tableView" destination="3fQ-j4-Dux" id="qhD-eM-v3o"/>
                     </connections>
@@ -233,9 +236,7 @@
         <scene sceneID="Hdi-U7-Ajp">
             <objects>
                 <navigationController id="2ZB-UW-xSA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="8kx-x2-UcD">
-                        <color key="badgeColor" red="0.602715373" green="0.602715373" blue="0.82502380630000005" alpha="1" colorSpace="calibratedRGB"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="8kx-x2-UcD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gjk-HO-4r7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -252,9 +253,7 @@
         <scene sceneID="B0N-PE-sFo">
             <objects>
                 <navigationController navigationBarHidden="YES" id="QXl-Nc-13E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Health" image="heart" catalog="system" id="cxB-Tc-ypC">
-                        <color key="badgeColor" red="0.602715373" green="0.602715373" blue="0.82502380630000005" alpha="1" colorSpace="calibratedRGB"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="My Health" image="heart" catalog="system" id="cxB-Tc-ypC"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CUN-PD-aP6">
                         <autoresizingMask key="autoresizingMask"/>

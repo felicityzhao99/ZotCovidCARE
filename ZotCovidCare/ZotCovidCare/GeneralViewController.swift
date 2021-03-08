@@ -10,6 +10,12 @@ import WebKit
 
 class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var StatisticsLabel: UILabel!
+    @IBOutlet weak var LatestNewsLabel: UILabel!
+    @IBOutlet weak var IrvineCasesLabel: UILabel!
+    @IBOutlet weak var UCIrvineDashboardLabel: UILabel!
+    @IBOutlet weak var ContentView: UIView!
+    
     @IBOutlet weak var NewsOneButton: UIButton!
     @IBOutlet weak var NewsTwoButton: UIButton!
     
@@ -40,6 +46,7 @@ class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewD
     var config = ["darkmode" : 0, "notification" : 0]
     override func viewDidLoad() {
         super.viewDidLoad()
+        darkModeInitialization()
         // [Statistics Part]
         
         tableView.delegate = self
@@ -100,11 +107,22 @@ class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func setBlack()
     {
+        view.backgroundColor = UIColor.darkGray
+        ContentView.backgroundColor = UIColor.darkGray
+        StatisticsLabel.textColor = UIColor.white
+        LatestNewsLabel.textColor = UIColor.white
+        IrvineCasesLabel.textColor = UIColor.white
+        UCIrvineDashboardLabel.textColor = UIColor.white
         
     }
     func setWhite()
     {
-    
+        view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
+        ContentView.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
+        StatisticsLabel.textColor = UIColor.black
+        LatestNewsLabel.textColor = UIColor.black
+        IrvineCasesLabel.textColor = UIColor.black
+        UCIrvineDashboardLabel.textColor = UIColor.black
     }
     
     //Keep checking Dark mode status even if this page doesn't receive any user actions.
