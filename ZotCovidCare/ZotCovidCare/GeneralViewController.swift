@@ -14,6 +14,7 @@ class GeneralViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var LatestNewsLabel: UILabel!
     @IBOutlet weak var IrvineCasesLabel: UILabel!
     @IBOutlet weak var UCIrvineDashboardLabel: UILabel!
+    
     @IBOutlet weak var ContentView: UIView!
     
     @IBOutlet weak var NewsOneButton: UIButton!

@@ -183,7 +183,7 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-78-OBp">
-                                        <rect key="frame" x="-18" y="174" width="432" height="405"/>
+                                        <rect key="frame" x="-18" y="175" width="432" height="405"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -216,14 +216,14 @@
                     <connections>
                         <outlet property="ContentView" destination="3BJ-ec-0r3" id="LcV-ep-cCu"/>
                         <outlet property="DashboardView" destination="59u-zq-gbi" id="VDs-zv-nMO"/>
-                        <outlet property="IrvineCasesLabel" destination="Blf-TJ-SJB" id="YgZ-3O-4tn"/>
+                        <outlet property="IrvineCasesLabel" destination="Blf-TJ-SJB" id="Oxk-9N-kyF"/>
                         <outlet property="LatestNewsLabel" destination="bvJ-Y5-Pui" id="Scb-pv-3zu"/>
                         <outlet property="NewsOneButton" destination="SIp-gh-0bB" id="FGe-iE-nZN"/>
                         <outlet property="NewsOneLabel" destination="IaX-hB-YRP" id="JJv-85-B6r"/>
                         <outlet property="NewsTwoButton" destination="k66-As-9xr" id="i3s-Ef-iTr"/>
                         <outlet property="NewsTwoLabel" destination="J2W-wG-LAw" id="Vfi-A6-IYD"/>
                         <outlet property="StatisticsLabel" destination="uxY-xI-s4g" id="lsa-bY-8Qx"/>
-                        <outlet property="UCIrvineDashboardLabel" destination="V6V-Cm-Ow9" id="vgc-qO-KD1"/>
+                        <outlet property="UCIrvineDashboardLabel" destination="V6V-Cm-Ow9" id="QxS-HT-2XZ"/>
                         <outlet property="ViewMoreButton" destination="uY4-2z-WTL" id="NeK-cM-LIu"/>
                         <outlet property="tableView" destination="3fQ-j4-Dux" id="qhD-eM-v3o"/>
                     </connections>
