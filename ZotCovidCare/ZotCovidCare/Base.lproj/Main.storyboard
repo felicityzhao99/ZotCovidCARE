@@ -275,7 +275,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start a new checkup to receive results and feedbacks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFs-kk-afY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start a new checkup toreceive results and feedbacks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFs-kk-afY">
                                 <rect key="frame" x="10" y="115" width="394" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="6Rz-FR-gix"/>
@@ -328,7 +328,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wFc-0h-kop"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.87193454041772955" green="0.95800065021125635" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jFs-kk-afY" firstAttribute="top" secondItem="wFc-0h-kop" secondAttribute="top" constant="71" id="4dF-Gi-m5d"/>
                             <constraint firstItem="wFc-0h-kop" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fCy-VU-LD5" secondAttribute="trailing" symbolic="YES" id="B9g-ya-lhx"/>
@@ -399,7 +399,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDi-hx-RQf"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" red="0.78834066585618623" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="bottom" secondItem="cRW-Dl-oSA" secondAttribute="bottom" constant="84" id="11B-Op-AUb"/>
                             <constraint firstItem="6my-vo-MdH" firstAttribute="top" secondItem="RHP-pc-UGE" secondAttribute="bottom" constant="58" id="44n-Ro-RCG"/>
@@ -526,7 +526,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fT5-SL-dGH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.83243005454134777" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fT5-SL-dGH" firstAttribute="trailing" secondItem="z3g-2W-D5H" secondAttribute="trailing" constant="50" id="93H-0C-5ZL"/>
                             <constraint firstItem="z3g-2W-D5H" firstAttribute="leading" secondItem="fT5-SL-dGH" secondAttribute="leading" constant="50" id="Fzi-cC-EIj"/>
@@ -735,9 +735,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
