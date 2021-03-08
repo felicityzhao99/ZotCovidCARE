@@ -44,7 +44,7 @@ class SettingViewController: UIViewController {
     
     func setWhite(){
         //view.backgroundColor = UIColor.white
-        view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
+        view.backgroundColor = UIColor(red:0.83243005454134777, green:1, blue:1, alpha:0.90000000000000002)
         label.textColor = UIColor.black
         LabelReceive.textColor = UIColor.black
         VersionNum.textColor = UIColor.black
@@ -115,7 +115,7 @@ class SettingViewController: UIViewController {
             txt.textColor = .white
             }
         else{
-            vc.view.backgroundColor = .white
+            vc.view.backgroundColor = UIColor(red:0.83243005454134777, green:1, blue:1, alpha:0.90000000000000002)
             txt.textColor = .black
             }
         
@@ -140,7 +140,7 @@ class SettingViewController: UIViewController {
             txt.textColor = .white
             }
         else{
-            vc.view.backgroundColor = .white
+            vc.view.backgroundColor = UIColor(red:0.83243005454134777, green:1, blue:1, alpha:0.90000000000000002)
             txt.textColor = .black
             }
         

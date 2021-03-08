@@ -393,7 +393,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func setWhite()
     {
-        view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
+        view.backgroundColor = UIColor(red:0.87193454041772955, green:0.95800065021125635, blue:1, alpha:0.90000000000000002)
         checkUp.textColor = UIColor.black
         healthData.textColor = UIColor.black
         newCheckup.setTitleColor(UIColor.systemBlue, for: .normal)
