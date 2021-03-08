@@ -9,12 +9,14 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var SearchBar: UISearchBar!
+    
     var config = ["darkmode" : 0, "notification" : 0]
     override func viewDidLoad() {
         super.viewDidLoad()
         darkModeInitialization()
 
-        // Do any additional setup after loading the view.
+        SearchBar.layer.cornerRadius = 20.0
     }
     //For reading config json whether to determine whether darkmode is on/off
     func darkModeInitialization()
@@ -49,7 +51,7 @@ class SearchViewController: UIViewController {
     }
     func setWhite()
     {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
         
     }
     

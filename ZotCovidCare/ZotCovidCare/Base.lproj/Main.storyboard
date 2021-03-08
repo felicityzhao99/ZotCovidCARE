@@ -183,7 +183,7 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-78-OBp">
-                                        <rect key="frame" x="-18" y="175" width="432" height="405"/>
+                                        <rect key="frame" x="-18" y="174" width="432" height="405"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -557,16 +557,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fep-CN-HcG">
-                                <rect key="frame" x="20" y="84" width="374" height="43"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar clipsSubviews="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Fep-CN-HcG">
+                                <rect key="frame" x="20" y="84" width="374" height="56"/>
+                                <color key="backgroundColor" red="0.5" green="0.71397772289999994" blue="0.75263522360000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vyf-bK-QUf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fep-CN-HcG" firstAttribute="trailing" secondItem="TW5-4p-C7S" secondAttribute="trailingMargin" id="TB9-T3-gBl"/>
+                            <constraint firstItem="Fep-CN-HcG" firstAttribute="top" secondItem="Vyf-bK-QUf" secondAttribute="top" constant="40" id="ZCn-2h-EIR"/>
+                            <constraint firstItem="Fep-CN-HcG" firstAttribute="leading" secondItem="TW5-4p-C7S" secondAttribute="leadingMargin" id="wV5-rG-QGl"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="SearchBar" destination="Fep-CN-HcG" id="Zir-XC-EsK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIN-Yn-O50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
