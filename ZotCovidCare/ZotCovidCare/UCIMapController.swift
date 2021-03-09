@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class UCIMapController: UIViewController {
 
+    @IBOutlet weak var UCIMap: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
