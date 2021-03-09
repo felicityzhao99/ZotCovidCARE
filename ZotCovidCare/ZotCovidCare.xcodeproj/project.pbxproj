@@ -20,6 +20,9 @@
 		28CADBD225CB701800092038 /* CheckUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CADBD125CB701800092038 /* CheckUpViewController.swift */; };
 		673453F225DEE78B00914B68 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673453F125DEE78B00914B68 /* GeneralViewController.swift */; };
 		6758542425DF29A500CA4D36 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6758542325DF29A500CA4D36 /* SearchViewController.swift */; };
+		679C3E1325F7408C00581999 /* inverted_index_words.json in Resources */ = {isa = PBXBuildFile; fileRef = 679C3E1225F7408C00581999 /* inverted_index_words.json */; };
+		679C3E1825F741BA00581999 /* title_links.json in Resources */ = {isa = PBXBuildFile; fileRef = 679C3E1725F741BA00581999 /* title_links.json */; };
+		679C3E1D25F75C4A00581999 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679C3E1C25F75C4A00581999 /* NewsViewController.swift */; };
 		67F629DF25EA135A002324BB /* oc_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 67F629DE25EA1359002324BB /* oc_json.json */; };
 		9954C78D25EFFA400001D788 /* IrvineMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9954C78C25EFFA400001D788 /* IrvineMapController.swift */; };
 		9954C79825F0A55D0001D788 /* UCIMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9954C79725F0A55C0001D788 /* UCIMapController.swift */; };
@@ -66,6 +69,9 @@
 		28CADBD125CB701800092038 /* CheckUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpViewController.swift; sourceTree = "<group>"; };
 		673453F125DEE78B00914B68 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		6758542325DF29A500CA4D36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		679C3E1225F7408C00581999 /* inverted_index_words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = inverted_index_words.json; path = ../../NewsCrawler/inverted_index_words.json; sourceTree = "<group>"; };
+		679C3E1725F741BA00581999 /* title_links.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = title_links.json; path = ../../NewsCrawler/title_links.json; sourceTree = "<group>"; };
+		679C3E1C25F75C4A00581999 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		67F629DE25EA1359002324BB /* oc_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = oc_json.json; path = ../../CovidCrawler/oc_json.json; sourceTree = "<group>"; };
 		9954C78C25EFFA400001D788 /* IrvineMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrvineMapController.swift; sourceTree = "<group>"; };
 		9954C79725F0A55C0001D788 /* UCIMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIMapController.swift; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 			children = (
 				AC6B36E825EDEAF400203DA0 /* config.json */,
 				67F629DE25EA1359002324BB /* oc_json.json */,
+				679C3E1225F7408C00581999 /* inverted_index_words.json */,
+				679C3E1725F741BA00581999 /* title_links.json */,
 				28C3BD0225DCBD9300A5F455 /* ZotCovidCare.entitlements */,
 				28454E0725C3D52F00269EDC /* AppDelegate.swift */,
 				28454E0925C3D52F00269EDC /* SceneDelegate.swift */,
@@ -142,6 +150,7 @@
 				6758542325DF29A500CA4D36 /* SearchViewController.swift */,
 				9954C78C25EFFA400001D788 /* IrvineMapController.swift */,
 				9954C79725F0A55C0001D788 /* UCIMapController.swift */,
+				679C3E1C25F75C4A00581999 /* NewsViewController.swift */,
 			);
 			path = ZotCovidCare;
 			sourceTree = "<group>";
@@ -276,7 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				28454E1425C3D53000269EDC /* LaunchScreen.storyboard in Resources */,
+				679C3E1325F7408C00581999 /* inverted_index_words.json in Resources */,
 				28454E1125C3D53000269EDC /* Assets.xcassets in Resources */,
+				679C3E1825F741BA00581999 /* title_links.json in Resources */,
 				AC6B36E925EDEAF400203DA0 /* config.json in Resources */,
 				28454E0F25C3D52F00269EDC /* Main.storyboard in Resources */,
 				67F629DF25EA135A002324BB /* oc_json.json in Resources */,
@@ -307,6 +318,7 @@
 				28CADBD225CB701800092038 /* CheckUpViewController.swift in Sources */,
 				28454E0C25C3D52F00269EDC /* ViewController.swift in Sources */,
 				28454E0825C3D52F00269EDC /* AppDelegate.swift in Sources */,
+				679C3E1D25F75C4A00581999 /* NewsViewController.swift in Sources */,
 				6758542425DF29A500CA4D36 /* SearchViewController.swift in Sources */,
 				673453F225DEE78B00914B68 /* GeneralViewController.swift in Sources */,
 				9954C78D25EFFA400001D788 /* IrvineMapController.swift in Sources */,
