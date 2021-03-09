@@ -22,9 +22,9 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     let healthStore = HKHealthStore()
     //global variable to store health information retrieved, used later in tableview
-    var sleep = ""
-    var steps = ""
-    var distance = ""
+    var sleep = "0"
+    var steps = "0"
+    var distance = "0"
     
     // healthkit authorization
     func authorizeHealthKit(){
@@ -41,7 +41,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.getSteps { (result) in
                     DispatchQueue.main.async {
                         let stepCount = Int(result)
-                        self.steps = String(stepCount) + " steps"
+                        self.steps = String(stepCount)
                         //reload table view to display newest health info
                         self.tableViewHealth.reloadData()
                     }
@@ -49,18 +49,14 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.getDistance{ (result) in
                     DispatchQueue.main.async {
                         let distanceWR = Double(result)
-                        self.distance = String(distanceWR) + " miles"
+                        self.distance = String(distanceWR)
                         //reload table view to display newest health info
                         self.tableViewHealth.reloadData()
                     }
                 }
                 self.getSleep{ (result) in
                     DispatchQueue.main.async {
-                        let seconds = Double(result)
-                        //convert to hours and minutes
-                        let hours = Int(seconds) / 3600
-                        let minutes = Int(seconds) % 3600 / 60
-                        self.sleep = String(hours) + " hours " + String(minutes) + " minutes"
+                        let seconds = String(Double(result))
                         //reload table view to display newest health info
                         self.tableViewHealth.reloadData()
                     }
@@ -196,15 +192,20 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableViewHealth: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellHealth = tableViewHealth.dequeueReusableCell(withIdentifier: "cellHealth", for: indexPath)
         if (indexPath.row==0){
-            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.sleep
+            let seconds = Double(self.sleep)
+            //convert to hours and minutes
+            let hours = Int(seconds!) / 3600
+            let minutes = Int(seconds!) % 3600 / 60
+            let sleep_str = String(hours) + " hours " + String(minutes) + " minutes"
+            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + sleep_str
             return cellHealth
         }
         else if (indexPath.row==1){
-            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.steps
+            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.steps + " steps"
             return cellHealth
         }
         else{
-            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.distance
+            cellHealth.textLabel?.text = healthArr[indexPath.row] + ": " + self.distance + " miles"
             return cellHealth
         }
         
@@ -219,11 +220,8 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     /*functions for recommendation system*/
     
+    //TODO: need to add personal model as parameter
     
-    //TODO: need to add personal model and health data as parameter
-    
-    //TODO: if we have time, add activities checklist
-    //www.texmed.org/uploadedFiles/Current/2016_Public_Health/Infectious_Diseases/309193%20Risk%20Assessment%20Chart%20V2_FINAL.pdf
     
     func predictRisk(temperature: String, symptoms: [Int])-> Int{
         //TODO: add Fahrenheit vs Celsius check
@@ -269,7 +267,6 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var output = ""
         var symptomText = ""
         var suggestionText = ""
-        var i = 0;
         var num = 1;
         
         //add temperature to output
@@ -302,6 +299,17 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else if (risk==3){
             output += "Risk: Low Risk\n"
         }
+        
+        //combine health info to suggestion
+        if (Double(self.sleep)!<6.0){
+            suggestionText += "\n" + String(num) + ". " + "Get more sleep."
+            num+=1
+        }
+        if (Int(self.steps)!<500){
+            suggestionText += "\n" + String(num) + ". " + "Get more exercise."
+            num+=1
+        }
+        
         
         //combine suggestion to output
         output += "Suggestions:\n" + suggestionText + "\n\n"
