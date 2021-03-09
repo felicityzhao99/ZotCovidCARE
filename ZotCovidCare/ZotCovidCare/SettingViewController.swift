@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SettingViewController: UIViewController {
     var config = ["darkmode" : 0, "notification" : 0]
@@ -17,8 +18,7 @@ class SettingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func notificationAction(_ sender: Any) {
-    }
+    
     func darkModeInitialization()
     {
         guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
@@ -39,6 +39,9 @@ class SettingViewController: UIViewController {
                 Outlet.setOn(true, animated: false)
             }else if config["darkmode"] == 0{
                 setWhite()
+            }
+            else if config["notification"] == 1{
+                actionNotify()
             }
             return
         } catch {}
@@ -73,6 +76,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var safetyLabel: UIButton!
     @IBOutlet weak var VersionNum: UILabel!
     
+    @IBOutlet weak var switchR: UISwitch!
     @IBOutlet weak var versionNumber: UILabel!
     @IBOutlet weak var settingTitle: UINavigationItem!
     
@@ -149,6 +153,51 @@ class SettingViewController: UIViewController {
         vc.view.addSubview(txt)
         navigationController?.pushViewController(vc, animated: true)
 
+    }
+    // To let user decide whether receive notification or not
+    let center = UNUserNotificationCenter.current()
+    @IBAction func notificationAction(_ sender: Any) {
+        if switchR.isOn == true{
+            config["notification"] = 1
+            actionNotify()
+        }
+        else{
+            config["notification"] = 0
+        }
+        
+        guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
+
+        let url = URL(fileURLWithPath: path)
+        
+        let jsonData = try! JSONSerialization.data(withJSONObject: config, options: .prettyPrinted)
+        print(url)
+        do {
+            try jsonData.write(to: url)
+        } catch {
+            print("wirte fail")
+        }
+        
+    }
+    
+    func actionNotify(){
+        //step 1: ask for permission
+//        center.requestAuthorization(options: [.alert,.sound]) { (true, error) in
+//        }
+        //step 2: create the notification content
+        let content = UNMutableNotificationContent()
+        content.title = "Daily reminder"
+        content.body = "You should get tested today"
+        //step 3: create notification trigger
+        let date = Date().addingTimeInterval(15)
+        let dateComponent = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+        //Step 4: Create the request
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        //step 5: register the request
+        center.add(request) { (error) in
+            //check the error parameter and handle any error
+        }
     }
     
     
