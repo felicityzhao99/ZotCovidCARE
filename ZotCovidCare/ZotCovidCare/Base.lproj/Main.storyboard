@@ -370,7 +370,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-pc-UGE">
-                                <rect key="frame" x="32" y="130" width="350" height="43"/>
+                                <rect key="frame" x="32" y="128" width="350" height="43"/>
                                 <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="tvU-nT-SpW"/>
@@ -380,7 +380,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6my-vo-MdH">
-                                <rect key="frame" x="20" y="231" width="364" height="222"/>
+                                <rect key="frame" x="20" y="229" width="364" height="222"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="222" id="3hC-le-aoF"/>
                                 </constraints>
@@ -390,7 +390,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRW-Dl-oSA">
-                                <rect key="frame" x="20" y="493" width="374" height="236"/>
+                                <rect key="frame" x="20" y="491" width="374" height="238"/>
                                 <state key="normal" title="Button" image="Irvine_Map"/>
                                 <connections>
                                     <segue destination="oKH-Tm-bq8" kind="show" id="Tg4-sC-BLN"/>
@@ -405,7 +405,7 @@
                             <constraint firstItem="cRW-Dl-oSA" firstAttribute="top" secondItem="6my-vo-MdH" secondAttribute="bottom" constant="40" id="6sw-Bv-ZvA"/>
                             <constraint firstItem="cRW-Dl-oSA" firstAttribute="centerX" secondItem="RHP-pc-UGE" secondAttribute="centerX" id="995-do-HVP"/>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="RHP-pc-UGE" secondAttribute="trailing" constant="32" id="BvM-Je-W7O"/>
-                            <constraint firstItem="RHP-pc-UGE" firstAttribute="top" secondItem="wDi-hx-RQf" secondAttribute="top" constant="42" id="J2C-vi-4Ka"/>
+                            <constraint firstItem="RHP-pc-UGE" firstAttribute="top" secondItem="wDi-hx-RQf" secondAttribute="top" constant="40" id="J2C-vi-4Ka"/>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RHP-pc-UGE" secondAttribute="trailing" id="PXt-EN-UWn"/>
                             <constraint firstItem="6my-vo-MdH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RHP-pc-UGE" secondAttribute="trailing" id="Smx-Li-pe9"/>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="6my-vo-MdH" secondAttribute="trailing" constant="30" id="XB4-U5-wRt"/>
@@ -692,6 +692,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="IFq-Zz-Yxh"/>
+                    <connections>
+                        <outlet property="IrvineMap" destination="wI0-N5-mAi" id="9NR-2z-4sZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGE-u9-JHo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -714,6 +717,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="DL0-Vr-Pxc"/>
+                    <connections>
+                        <outlet property="UCIMap" destination="ZRm-JV-jnc" id="Zni-vY-okS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bm-Z4-o1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -729,7 +735,7 @@
         <image name="logo" width="230" height="170"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
-        <image name="smiley" catalog="system" width="128" height="121"/>
+        <image name="smiley" catalog="system" width="32" height="32"/>
         <image name="virus_felgner_showing_microarrays" width="300" height="214"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
