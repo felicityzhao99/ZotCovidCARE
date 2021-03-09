@@ -17,6 +17,8 @@ class SettingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func notificationAction(_ sender: Any) {
+    }
     func darkModeInitialization()
     {
         guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
