@@ -545,6 +545,7 @@
                         <outlet property="VersionNum" destination="hr5-OY-w7l" id="aGp-oM-eQE"/>
                         <outlet property="label" destination="e4D-NE-3oO" id="S6q-Pw-7dD"/>
                         <outlet property="safetyLabel" destination="yBp-mN-XUs" id="88n-hb-ocI"/>
+                        <outlet property="switchR" destination="cXK-Td-bF8" id="Q0n-6N-Oao"/>
                         <outlet property="versionNumber" destination="j6L-HY-Bwx" id="VJT-6K-A6A"/>
                     </connections>
                 </viewController>
