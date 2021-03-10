@@ -25,6 +25,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var sleep = "0"
     var steps = "0"
     var distance = "0"
+    var tempMode = 0
     
     // healthkit authorization
     func authorizeHealthKit(){
@@ -224,15 +225,22 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func predictRisk(temperature: String, symptoms: [Int])-> Int{
-        //TODO: add Fahrenheit vs Celsius check
-        let floatTemp = Float(temperature)
+        
+        var floatTemp = Float(temperature) ?? 98.0
+        
+        //Fahrenheit vs Celsius check
+        //convert celsius to fahrenheit
+        if (self.tempMode==1 && temperature != ""){
+            floatTemp = (floatTemp * 9/5) + 32
+        }
+        
         
         //high risk
-        if (floatTemp!>=100 && symptoms[1]==1 && symptoms[2]==1 && symptoms[3]==1){
+        if (floatTemp>=100 && symptoms[1]==1 && symptoms[2]==1 && symptoms[3]==1){
             return 1
         }
         //medium risk
-        else if (floatTemp!>=100 || symptoms[0]==1 || symptoms[1]==1 || symptoms[2]==1 || symptoms[3]==1 || symptoms[4]==1 || symptoms[5]==1 || symptoms[6]==1){
+        else if (floatTemp>=100 || symptoms[0]==1 || symptoms[1]==1 || symptoms[2]==1 || symptoms[3]==1 || symptoms[4]==1 || symptoms[5]==1 || symptoms[6]==1){
             return 2
         }
         //low risk
@@ -270,8 +278,17 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var num = 1;
         
         //add temperature to output
-        //TODO: add Fahrenheit vs Celsius check
-        output += "Temperature: " + temperature + "°F" + "\n"
+        //empty string check
+        if (temperature == ""){
+            output += "Temperature: N/A \n"
+        }
+        //Fahrenheit vs Celsius check
+        else if (self.tempMode==0){
+            output += "Temperature: " + temperature + "°F" + "\n"
+        }
+        else{
+            output += "Temperature: " + temperature + "°C" + "\n"
+        }
         
         //loop through all symptoms, if symptom==1, add to symptoms and add Corresponding Suggestion
         for (i, symptom) in symptoms.enumerated(){
@@ -321,7 +338,10 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func didTapButtonCheckUp(){
         let vcCheckup = storyboard?.instantiateViewController(identifier: "checkup") as! CheckUpViewController
         vcCheckup.modalPresentationStyle = .fullScreen
-        vcCheckup.completionHandler = { text,arr in
+        vcCheckup.completionHandler = { text,arr,tempFC in
+            //set global temperature mode as index returned by switch
+            self.tempMode = tempFC!
+//            print(self.tempMode)
             
             //default text setting
             self.label.textAlignment = .left

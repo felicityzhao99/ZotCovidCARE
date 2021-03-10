@@ -33,9 +33,9 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-
+    @IBOutlet var tempSwitch: UISegmentedControl?
     @IBOutlet var field: UITextField!
-    public var completionHandler: ((String?,[Int]?)->Void)?
+    public var completionHandler: ((String?,[Int]?,Int?)->Void)?
     //dict which records config.json whether to determine whether darkmode is on/off
     var config = ["darkmode" : 0, "notification" : 0]
     
@@ -103,6 +103,9 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func didTapSubmit(){
+//        print("# of Segments = \(tempSwitch?.selectedSegmentIndex)")
+        
+        
         var arr:[Int] = []
         let cells = self.tableView.visibleCells
         
@@ -115,7 +118,7 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
-        completionHandler?(field.text, arr)
+        completionHandler?(field.text, arr, tempSwitch?.selectedSegmentIndex)
         darkModeInitialization()
         dismiss(animated: true, completion: nil)
     }
