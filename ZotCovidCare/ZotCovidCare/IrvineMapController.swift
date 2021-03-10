@@ -2,7 +2,7 @@
 //  IrvineMapController.swift
 //  ZotCovidCare
 //
-//  Created by 茅铠宁 on 2021/3/4.
+//  Created by Kylin on 2021/3/4.
 //
 
 import UIKit
@@ -20,14 +20,50 @@ class IrvineMapController: UIViewController,CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         darkModeInitialization()
-        checkLoationServices()
+        checkLocationServices()
         IrvineMap.showsUserLocation  = true
-        centerViewOnUserLocation()
+//        centerViewOnUserLocation()
         locationManger.startUpdatingLocation()
+        addTestingLocation()
         
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    func addTestingLocation(){
+
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = "covid testing"
+        request.region = IrvineMap.region
+        let search = MKLocalSearch(request: request)
+        search.start { response, _ in
+            guard let response = response else {
+                return
+            }
+            let mapItems = response.mapItems
+            for mapItem in mapItems{
+                let myLatitude = mapItem.placemark.location!.coordinate.latitude
+                let myLongitude = mapItem.placemark.location!.coordinate.longitude
+                let building_name = mapItem.name
+                let building_phone = mapItem.phoneNumber
+                
+                
+                let annotation = MKPointAnnotation()
+                annotation.title = building_name
+                annotation.subtitle = building_phone
+                
+                
+                annotation.coordinate = CLLocationCoordinate2D(latitude: myLatitude, longitude: myLongitude)
+                self.IrvineMap.addAnnotation(annotation)
+            }
+        }
+        
+    }
+    
+    
+    
     
     func darkModeInitialization()
         {
@@ -81,7 +117,7 @@ class IrvineMapController: UIViewController,CLLocationManagerDelegate {
         }
     }
     
-    func checkLoationServices(){
+    func checkLocationServices(){
         if CLLocationManager.locationServicesEnabled(){
             setupLocationManager()
         }else{
