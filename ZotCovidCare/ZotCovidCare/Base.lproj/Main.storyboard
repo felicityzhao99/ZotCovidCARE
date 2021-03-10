@@ -557,10 +557,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar clipsSubviews="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Fep-CN-HcG">
+                            <searchBar clipsSubviews="YES" contentMode="redraw" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fep-CN-HcG">
                                 <rect key="frame" x="20" y="84" width="374" height="56"/>
                                 <color key="backgroundColor" red="0.5" green="0.71397772289999994" blue="0.75263522360000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="SuH-L8-gj0" id="k26-2T-XAz"/>
                                 </connections>

@@ -8,25 +8,42 @@
 import UIKit
 import Foundation
 
+//title_link.json
 struct MyNews {
     let title: String
     let link: String
 }
 
-var myIndex = 0
-var news_links = [String]()
+//inverted_index_words.json
+struct MyNews2 {
+    let counts: Int
+    let query: String
+    let title: String
+    let link: String
+}
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+var myIndex = 0
+var news_links_no_searching = [String]()
+var news_links_searching = [String]()
+var searching = false
+var firstTime = true
+
+
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var SearchTableView: UITableView!
     
     @Published var news_no_searching = [MyNews]()
-
+    @Published var news_searching = [MyNews2]()
+    
+    var news_by_query = [MyNews2]()
     var config = ["darkmode" : 0, "notification" : 0]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return news_no_searching.count
+        if searching {return news_by_query.count}
+        if searching == false && firstTime {return news_no_searching.count}
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,8 +55,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
             cell.layer.mask = maskLayer
         
-        cell.textLabel?.text = news_no_searching[indexPath.row].title
-        news_links.append(news_no_searching[indexPath.row].link)
+        if searching {
+            cell.textLabel?.text = news_by_query[indexPath.row].title
+            news_links_searching.append(news_by_query[indexPath.row].link)
+        }
+        if searching == false && firstTime {
+            cell.textLabel?.text = news_no_searching[indexPath.row].title
+            news_links_no_searching.append(news_no_searching[indexPath.row].link)
+            
+        }
         return cell
     }
     
@@ -48,11 +72,43 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         performSegue(withIdentifier: "showLinks", sender: self)
     }
     
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("searchTextOne \(searchText)")
+        searching = false
+        firstTime = false
+        news_by_query.removeAll()
+        SearchTableView.reloadData()
+            
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searching {
+            news_by_query.removeAll()
+            searching = false
+        }
+        print("searchTextTwo \(searchBar.text)")
+        
+        for news in news_searching {
+            
+            if news.query.lowercased() == searchBar.text?.lowercased() {
+                news_by_query.append(news)
+                searching = true
+            }
+        }
+        print(news_by_query)
+        news_links_searching.removeAll()
+        SearchTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         darkModeInitialization()
         FetchingInformationNoSearching()
-        print(news_no_searching.count)
+        print("News No Searching Counts: \(news_no_searching.count)")
+        FetchingInformation()
+        print("News Searching Counts: \(news_searching.count)")
+        SearchBar.delegate = self
         
         SearchBar.layer.cornerRadius = 20.0
         SearchTableView.layer.cornerRadius = 15.0
@@ -96,15 +152,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             //print(json)
             
-            guard let array = json as? [Any] else {return}
-            for news in array {
-                guard let newsDict = news as? [String: Any] else {return}
-                guard let counts = newsDict["counts"] as? String else {return}
-                guard let link = newsDict["link"] as? String else {return}
-                guard let query = newsDict["query"] as? String else {return}
-                guard let title = newsDict["title"] as? String else {return}
+            guard let array2 = json as? [Any] else {return}
+            for news2 in array2 {
+                guard let newsDict2 = news2 as? [String: Any] else {return}
+                guard let counts2 = newsDict2["counts"] as? Int else {return}
+                guard let link2 = newsDict2["link"] as? String else {return}
+                guard let query2 = newsDict2["query"] as? String else {return}
+                guard let title2 = newsDict2["title"] as? String else {return}
+                let mynews2 = MyNews2(counts: counts2, query: query2, title: title2, link: link2)
+                news_searching.append(mynews2)
             }
-            
 
         } catch {
             print(error)
