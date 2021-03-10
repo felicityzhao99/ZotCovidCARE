@@ -74,7 +74,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("searchTextOne \(searchText)")
+        //print("searchTextOne \(searchText)")
         searching = false
         firstTime = false
         news_by_query.removeAll()
@@ -87,13 +87,26 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             news_by_query.removeAll()
             searching = false
         }
-        print("searchTextTwo \(searchBar.text)")
         
-        for news in news_searching {
-            
-            if news.query.lowercased() == searchBar.text?.lowercased() {
-                news_by_query.append(news)
-                searching = true
+        //print("searchTextTwo \(searchBar.text)")
+        
+        var components = searchBar.text?.components(separatedBy: " ")
+        
+        print(components)
+        var flag = false
+        for c in components ?? [String]() {
+            for news in news_searching {
+                
+                if news.query.lowercased() == c.lowercased() {
+                    news_by_query.append(news)
+                    searching = true
+                    flag = true
+                }
+            }
+            if flag {
+                //print("component checked \(c)")
+                break
+                
             }
         }
         print(news_by_query)
