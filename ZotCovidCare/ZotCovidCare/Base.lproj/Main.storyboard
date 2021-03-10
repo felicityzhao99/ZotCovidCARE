@@ -380,7 +380,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6my-vo-MdH">
-                                <rect key="frame" x="20" y="229" width="364" height="222"/>
+                                <rect key="frame" x="20" y="271" width="364" height="222"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="222" id="3hC-le-aoF"/>
                                 </constraints>
@@ -390,7 +390,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRW-Dl-oSA">
-                                <rect key="frame" x="20" y="491" width="374" height="238"/>
+                                <rect key="frame" x="20" y="533" width="374" height="196"/>
                                 <state key="normal" title="Button" image="Irvine_Map"/>
                                 <connections>
                                     <segue destination="oKH-Tm-bq8" kind="show" id="Tg4-sC-BLN"/>
@@ -401,7 +401,6 @@
                         <color key="backgroundColor" red="0.78834066585618623" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="bottom" secondItem="cRW-Dl-oSA" secondAttribute="bottom" constant="84" id="11B-Op-AUb"/>
-                            <constraint firstItem="6my-vo-MdH" firstAttribute="top" secondItem="RHP-pc-UGE" secondAttribute="bottom" constant="58" id="44n-Ro-RCG"/>
                             <constraint firstItem="cRW-Dl-oSA" firstAttribute="top" secondItem="6my-vo-MdH" secondAttribute="bottom" constant="40" id="6sw-Bv-ZvA"/>
                             <constraint firstItem="cRW-Dl-oSA" firstAttribute="centerX" secondItem="RHP-pc-UGE" secondAttribute="centerX" id="995-do-HVP"/>
                             <constraint firstItem="wDi-hx-RQf" firstAttribute="trailing" secondItem="RHP-pc-UGE" secondAttribute="trailing" constant="32" id="BvM-Je-W7O"/>
@@ -808,14 +807,14 @@
     </scenes>
     <resources>
         <image name="Irvine_Map" width="512" height="196"/>
-        <image name="UCI_Map" width="768" height="492"/>
+        <image name="UCI_Map" width="766" height="487"/>
         <image name="cool-background" width="1200" height="580"/>
         <image name="first_covid_vaccinations_at_UCI" width="300" height="169"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="logo" width="230" height="170"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
-        <image name="smiley" catalog="system" width="32" height="32"/>
+        <image name="smiley" catalog="system" width="128" height="121"/>
         <image name="virus_felgner_showing_microarrays" width="300" height="214"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

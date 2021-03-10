@@ -2,7 +2,7 @@
 //  UCIMapController.swift
 //  ZotCovidCare
 //
-//  Created by 茅铠宁 on 2021/3/4.
+//  Created by Kylin on 2021/3/4.
 //
 
 import UIKit
@@ -29,11 +29,11 @@ class UCIMapController: UIViewController,CLLocationManagerDelegate {
 
         UCIMap.showsUserLocation = true
         let anotation = MKPointAnnotation()
-        anotation.coordinate = CLLocationCoordinate2D(latitude: 33.640455, longitude: -117.844285)
+        anotation.coordinate = CLLocationCoordinate2D(latitude: 33.646016154709855, longitude: -117.84271241543259)
 //        UCIMap.addAnnotation(anotation)
         
         
-        let region = MKCoordinateRegion(center: anotation.coordinate, latitudinalMeters: 2500, longitudinalMeters: 2500)
+        let region = MKCoordinateRegion(center: anotation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
         UCIMap.setRegion(region, animated: true)
         
         readDashboard()
