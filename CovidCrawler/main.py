@@ -5,7 +5,8 @@ import re
 
 
 def parse_dashboard():
-    dic = dict()
+    ls = list()
+    
     ini = 0
     try:
         url = "https://uci.edu/coronavirus/dashboard/index.php"
@@ -21,12 +22,15 @@ def parse_dashboard():
             td = tableclass.find_all("td")
             while True:
                 try:
-                    dic[td[ini].get_text()] = td[ini + 1].get_text()
+                    dic = dict()
+                    dic["buiding"]=td[ini].get_text()
+                    dic["dates"] = td[ini + 1].get_text()
+                    ls.append(dic)
                     ini += 2
                 except:
                     break
     with open('dash_json.json', 'w') as f:
-        json.dump(dic, f)
+        json.dump(ls, f)
 
 
 parse_dashboard()
