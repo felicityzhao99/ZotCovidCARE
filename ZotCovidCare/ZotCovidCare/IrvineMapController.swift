@@ -11,46 +11,97 @@ import CoreLocation
 
 class IrvineMapController: UIViewController,CLLocationManagerDelegate {
     @IBOutlet weak var IrvineMap: MKMapView!
-    let loc_manager = CLLocationManager()
+    var config = ["darkmode" : 0, "notification" : 0]
+    
+    let locationManger = CLLocationManager()
+    let regionMeters:Double = 10000
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        darkModeInitialization()
+        checkLoationServices()
+        IrvineMap.showsUserLocation  = true
+        centerViewOnUserLocation()
+        locationManger.startUpdatingLocation()
         
+
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        loc_manager.desiredAccuracy = kCLLocationAccuracyBest
-        loc_manager.delegate = self
-        loc_manager.requestWhenInUseAuthorization()
-        loc_manager.stopUpdatingLocation()
-    }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first{
-            loc_manager.stopUpdatingLocation()
+    
+    func darkModeInitialization()
+        {
+            guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
+
+            let url = URL(fileURLWithPath: path)
             
-            render(location)
+            do {
+                
+                let data = try Data(contentsOf: url)
+                let jsonData = try JSONSerialization.jsonObject(with: data, options: [])
+                if let dictFromJSON = jsonData as? [String : Int]{
+                    config["darkmode"] = dictFromJSON["darkmode"]
+                    config["notification"] = dictFromJSON["notification"]
+                } else {
+                    print("json convert fail\n")
+                }
+                if config["darkmode"] == 1{
+                    setBlack()
+                }else{
+                    setWhite()
+                }
+                return
+            } catch {}
+        }
+        
+        func setBlack()
+        {
+            if #available(iOS 13.0, *) {
+                self.overrideUserInterfaceStyle = .dark
+            }
+        }
+        
+        func setWhite()
+        {
+            if #available(iOS 13.0, *) {
+                self.overrideUserInterfaceStyle = .light
+            }
+        }
+    
+    func setupLocationManager(){
+        locationManger.delegate = self
+        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func centerViewOnUserLocation() {
+        if let location = locationManger.location?.coordinate{
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionMeters, longitudinalMeters: regionMeters)
+            IrvineMap.setRegion(region, animated: true)
+            
         }
     }
-    func render(_ location:CLLocation){
-        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
-                                                longitude: location.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.1,
-                                    longitudeDelta: 0.1)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
+    
+    func checkLoationServices(){
+        if CLLocationManager.locationServicesEnabled(){
+            setupLocationManager()
+        }else{
+            //Show alert
+        }
+    }
+
+}
+
+    
+extension IrvineMapController{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else{return}
+        let center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: regionMeters, longitudinalMeters: regionMeters)
         IrvineMap.setRegion(region, animated: true)
-        
-        let pin = MKPointAnnotation()
-        pin.coordinate = coordinate
-        IrvineMap.addAnnotation(pin)
     }
-
-    /*
-    // MARK: - Navigati
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        //back here
     }
-    */
-
+    
 }
