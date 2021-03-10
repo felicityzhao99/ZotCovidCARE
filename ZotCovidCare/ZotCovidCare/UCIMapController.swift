@@ -9,11 +9,20 @@ import UIKit
 import MapKit
 import CoreLocation
 
+struct DashboardLocation {
+    let building: String
+    let dates: String
+}
+
 class UCIMapController: UIViewController,CLLocationManagerDelegate {
 
     @IBOutlet weak var UCIMap: MKMapView!
     var config = ["darkmode" : 0, "notification" : 0]
     let loc_manager = CLLocationManager()
+    
+    var allBuildings = [DashboardLocation]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         darkModeInitialization()
@@ -21,13 +30,77 @@ class UCIMapController: UIViewController,CLLocationManagerDelegate {
         UCIMap.showsUserLocation = true
         let anotation = MKPointAnnotation()
         anotation.coordinate = CLLocationCoordinate2D(latitude: 33.640455, longitude: -117.844285)
-        UCIMap.addAnnotation(anotation)
+//        UCIMap.addAnnotation(anotation)
         
-        let region = MKCoordinateRegion(center: anotation.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
+        
+        let region = MKCoordinateRegion(center: anotation.coordinate, latitudinalMeters: 2500, longitudinalMeters: 2500)
         UCIMap.setRegion(region, animated: true)
+        
+        readDashboard()
+        addDashboardLocation()
     
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    func readDashboard(){
+        guard let path = Bundle.main.path(forResource: "dash_json", ofType: "json") else {return}
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            
+            print(json)
+            guard let array = json as? [Any] else {return}
+            for b in array {
+                guard let buildingDict = b as? [String: Any] else {return}
+                guard let building = buildingDict["building"] as? String else {return}
+                guard let dates = buildingDict["dates"] as? String else {return}
+                let myBuilding = DashboardLocation(building:building, dates:dates)
+                allBuildings.append(myBuilding)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    func addDashboardLocation(){
+        for b in allBuildings{
+            print(b.building)
+            let request = MKLocalSearch.Request()
+            request.naturalLanguageQuery = b.building
+            request.region = UCIMap.region
+            let search = MKLocalSearch(request: request)
+            search.start { response, _ in
+                guard let response = response else {
+                    return
+                }
+                var mapItems = response.mapItems
+                for mapItem in mapItems{
+                    var myLatitude = mapItem.placemark.location!.coordinate.latitude
+                    var myLongitude = mapItem.placemark.location!.coordinate.longitude
+                    print(myLatitude,myLongitude)
+                    let annotation = MKPointAnnotation()
+                    annotation.title = b.building
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: myLatitude, longitude: myLongitude)
+                    self.UCIMap.addAnnotation(annotation)
+                }
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     func darkModeInitialization()
         {
             guard let path = Bundle.main.path(forResource: "config", ofType: "json") else {return}
