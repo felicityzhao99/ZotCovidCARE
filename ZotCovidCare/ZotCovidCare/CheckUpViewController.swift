@@ -102,9 +102,7 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
         darkModeInitialization()
     }
     
-    @IBAction func didTapSubmit(){
-//        print("# of Segments = \(tempSwitch?.selectedSegmentIndex)")
-        
+    @IBAction func didTapSubmit(){        
         
         var arr:[Int] = []
         let cells = self.tableView.visibleCells

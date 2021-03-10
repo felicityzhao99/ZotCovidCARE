@@ -214,7 +214,6 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     
-    
     // health tableview
     
     @IBOutlet var tableViewHealth: UITableView!
@@ -337,7 +336,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         //combine symptom to output
-        output += "Symptoms: " + symptomText + "\n\n"
+        output += "Symptoms: " + symptomText + "\n"
         
         //add risk
         if (risk==1){
@@ -363,7 +362,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         //combine suggestion to output
-        output += "Suggestions:\n" + suggestionText + "\n\n"
+        output += "\n" + suggestionText + "\n\n"
         
         //vaccine suggestion based on personal model: age
         if (self.age != ""){
@@ -375,8 +374,6 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        
-        
         return output
     }
     
@@ -387,7 +384,6 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         vcCheckup.completionHandler = { text,arr,tempFC in
             //set global temperature mode as index returned by switch
             self.tempMode = tempFC!
-//            print(self.tempMode)
             
             //default text setting
             self.label.textAlignment = .left
@@ -415,11 +411,6 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         present(vcCheckup,animated: true)
         
     }
-    
-    
-    
-    
-    
     
     
     
