@@ -25,6 +25,10 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var sleep = "0"
     var steps = "0"
     var distance = "0"
+    var age = ""
+    var sex = ""
+    
+    var tempMode = 0
     
     // healthkit authorization
     func authorizeHealthKit(){
@@ -37,6 +41,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         healthStore.requestAuthorization(toShare: nil, read: read) {(chk,error) in
             if (chk){
                 print("permission granted")
+                self.buildPersonalModel()
 
                 self.getSteps { (result) in
                     DispatchQueue.main.async {
@@ -56,7 +61,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
                 self.getSleep{ (result) in
                     DispatchQueue.main.async {
-                        let seconds = String(Double(result))
+                        self.sleep = String(Double(result))
                         //reload table view to display newest health info
                         self.tableViewHealth.reloadData()
                     }
@@ -88,7 +93,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         )
 
         query.initialResultsHandler = { query, results, error in
-            if error != nil { // handle error
+            if (error != nil) { // handle error
                 return
             }
 
@@ -127,7 +132,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         )
 
         query.initialResultsHandler = { query, results, error in
-            if error != nil { // handle error
+            if (error != nil) { // handle error
                 return
             }
 
@@ -175,6 +180,36 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         healthStore.execute(query)
     }
     
+    func buildPersonalModel() {
+        // Biological Sex
+        if try! healthStore.biologicalSex().biologicalSex == HKBiologicalSex.female {
+            self.sex = "female"
+        } else if try! healthStore.biologicalSex().biologicalSex == HKBiologicalSex.male {
+            self.sex = "male"
+        } else if try! healthStore.biologicalSex().biologicalSex == HKBiologicalSex.other {
+            self.sex = ""
+        }
+        
+        // Date of Birth
+        if #available(iOS 10.0, *) {
+            do{
+                let birthdayComponents =  try healthStore.dateOfBirthComponents()
+                print(birthdayComponents)
+                //calculate age
+                let today = Date()
+                let calendar = Calendar.current
+                let todayDateComponents = calendar.dateComponents([.year], from: today)
+                let thisYear = todayDateComponents.year!
+                let age = thisYear - birthdayComponents.year!
+                self.age = String(age)
+            }
+            catch let error {
+                print("There was a problem fetching your data: \(error)")
+                print("Date of Birth info need to be added in Health for a comprehensive model.")
+            }
+        }
+    }
+    
     
     
     
@@ -220,19 +255,24 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     /*functions for recommendation system*/
     
-    //TODO: need to add personal model as parameter
-    
     
     func predictRisk(temperature: String, symptoms: [Int])-> Int{
-        //TODO: add Fahrenheit vs Celsius check
-        let floatTemp = Float(temperature)
+        
+        var floatTemp = Float(temperature) ?? 98.0
+        
+        //Fahrenheit vs Celsius check
+        //convert celsius to fahrenheit
+        if (self.tempMode==1 && temperature != ""){
+            floatTemp = (floatTemp * 9/5) + 32
+        }
+        
         
         //high risk
-        if (floatTemp!>=100 && symptoms[1]==1 && symptoms[2]==1 && symptoms[3]==1){
+        if (floatTemp>=100 && symptoms[1]==1 && symptoms[2]==1 && symptoms[3]==1){
             return 1
         }
         //medium risk
-        else if (floatTemp!>=100 || symptoms[0]==1 || symptoms[1]==1 || symptoms[2]==1 || symptoms[3]==1 || symptoms[4]==1 || symptoms[5]==1 || symptoms[6]==1){
+        else if (floatTemp>=100 || symptoms[0]==1 || symptoms[1]==1 || symptoms[2]==1 || symptoms[3]==1 || symptoms[4]==1 || symptoms[5]==1 || symptoms[6]==1){
             return 2
         }
         //low risk
@@ -270,8 +310,17 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var num = 1;
         
         //add temperature to output
-        //TODO: add Fahrenheit vs Celsius check
-        output += "Temperature: " + temperature + "°F" + "\n"
+        //empty string check
+        if (temperature == ""){
+            output += "Temperature: N/A \n"
+        }
+        //Fahrenheit vs Celsius check
+        else if (self.tempMode==0){
+            output += "Temperature: " + temperature + "°F" + "\n"
+        }
+        else{
+            output += "Temperature: " + temperature + "°C" + "\n"
+        }
         
         //loop through all symptoms, if symptom==1, add to symptoms and add Corresponding Suggestion
         for (i, symptom) in symptoms.enumerated(){
@@ -287,7 +336,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         //combine symptom to output
-        output += "Symptoms: " + symptomText + "\n\n"
+        output += "Symptoms: " + symptomText + "\n"
         
         //add risk
         if (risk==1){
@@ -301,7 +350,9 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         //combine health info to suggestion
-        if (Double(self.sleep)!<6.0){
+        let seconds = Double(self.sleep)
+        let hours = Int(seconds!) / 3600
+        if (hours<6){
             suggestionText += "\n" + String(num) + ". " + "Get more sleep."
             num+=1
         }
@@ -310,9 +361,18 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
             num+=1
         }
         
-        
         //combine suggestion to output
-        output += "Suggestions:\n" + suggestionText + "\n\n"
+        output += "\n" + suggestionText + "\n\n"
+        
+        //vaccine suggestion based on personal model: age
+        if (self.age != ""){
+            if (Int(self.age)!>=65){
+                output += "You are eligible for Coronavirus Vaccine!"
+            }
+            else if (Int(self.age)!>=50){
+                output += "You can register for Coronavirus Vaccine on March 15th!"
+            }
+        }
         
         return output
     }
@@ -321,7 +381,9 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func didTapButtonCheckUp(){
         let vcCheckup = storyboard?.instantiateViewController(identifier: "checkup") as! CheckUpViewController
         vcCheckup.modalPresentationStyle = .fullScreen
-        vcCheckup.completionHandler = { text,arr in
+        vcCheckup.completionHandler = { text,arr,tempFC in
+            //set global temperature mode as index returned by switch
+            self.tempMode = tempFC!
             
             //default text setting
             self.label.textAlignment = .left
@@ -349,11 +411,6 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         present(vcCheckup,animated: true)
         
     }
-    
-    
-    
-    
-    
     
     
     
