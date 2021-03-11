@@ -47,6 +47,7 @@ class CheckUpViewController: UIViewController, UITableViewDelegate, UITableViewD
         darkModeInitialization()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.layer.cornerRadius = 15.0
     }
     //For reading config json whether to determine whether darkmode is on/off
     func darkModeInitialization()

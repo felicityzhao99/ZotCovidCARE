@@ -15,6 +15,8 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         tableViewHealth.delegate = self
         tableViewHealth.dataSource = self
+        tableViewHealth.layer.cornerRadius = 20.0
+        
         darkModeInitialization()
         authorizeHealthKit()
     }
@@ -29,6 +31,7 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var sex = ""
     
     var tempMode = 0
+    var risk = 0
     
     // healthkit authorization
     func authorizeHealthKit(){
@@ -297,12 +300,12 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //www.medicalnewstoday.com/articles/coronavirus-home-remedies#is-home-treatment-effective
         let suggestions = ["Take a fever reducer.",
                            "Drink warm beverages throughout the day.",
-                           "Take slow breaths, Try meditation.",
+                           "Take slow breaths; Try meditation.",
                            "Sniff prescribed odors if possible.",
-                           "Get enough sleep, Take pain reliever if necessary.",
-                           "Drink more water, Avoid fatty or fried foods.",
-                           "Stretch, Use ice pack, Take pain reliever if necessary.",
-                           "Wash hands often, Keep 6ft away from others."]
+                           "Get enough sleep; Take pain reliever.",
+                           "Drink more water; Avoid fatty or fried foods.",
+                           "Stretch; Use ice pack; Take pain reliever.",
+                           "Wash hands often; Keep 6ft away from others."]
         
         var output = ""
         var symptomText = ""
@@ -389,20 +392,35 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.label.textAlignment = .left
             
             //predict risk, set text color according to risk
-            let risk = self.predictRisk(temperature: text!, symptoms: arr!)
-            if (risk==1){
-                self.label.textColor = .systemRed
+            self.risk = self.predictRisk(temperature: text!, symptoms: arr!)
+            if (self.risk==1){
+                if (self.config["darkmode"]==1){
+                    self.label.textColor = UIColor(red:255/255, green:60/255, blue:55/255, alpha:1)
+                }
+                else{
+                    self.label.textColor = .systemRed
+                }
             }
-            else if (risk==2){
-                self.label.textColor = .systemYellow
+            else if (self.risk==2){
+                if (self.config["darkmode"]==1){
+                    self.label.textColor = .systemYellow
+                }
+                else{
+                    self.label.textColor = UIColor(red:241/255, green:177/255, blue:80/255, alpha:1)
+                }
             }
-            else if (risk==3){
-                self.label.textColor = .systemGreen
+            else if (self.risk==3){
+                if (self.config["darkmode"]==1){
+                    self.label.textColor = UIColor(red:192/255, green:60/25, blue:55/255, alpha:1)
+                }
+                else{
+                    self.label.textColor = .systemGreen
+                }
             }
             
             
             //give recommendation
-            self.label.text = self.giveSuggestion(temperature: text!, symptoms: arr!, risk: risk)
+            self.label.text = self.giveSuggestion(temperature: text!, symptoms: arr!, risk: self.risk)
             
             
             
@@ -455,6 +473,19 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func setBlack()
     {
         view.backgroundColor = UIColor.darkGray
+        if(self.risk==0){
+            label.textColor = UIColor.white
+        }
+        else if (self.risk==1){
+            label.textColor = UIColor(red:255/255, green:60/255, blue:55/255, alpha:1)
+        }
+        else if (self.risk==2){
+            label.textColor = .systemYellow
+        }
+        else if (self.risk==3){
+            label.textColor = UIColor(red:192/255, green:60/25, blue:55/255, alpha:1)
+        }
+        
         checkUp.textColor = UIColor.white
         healthData.textColor = UIColor.white
         newCheckup.setTitleColor(UIColor.cyan, for: .normal)
@@ -463,6 +494,18 @@ class HealthViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func setWhite()
     {
         view.backgroundColor = UIColor(red:0.87193454041772955, green:0.95800065021125635, blue:1, alpha:0.90000000000000002)
+        if(self.risk==0){
+            label.textColor = UIColor.black
+        }
+        else if (self.risk==1){
+            label.textColor = .systemRed
+        }
+        else if (self.risk==2){
+            label.textColor = UIColor(red:241/255, green:177/255, blue:80/255, alpha:1)
+        }
+        else if (self.risk==3){
+            label.textColor = .systemGreen
+        }
         checkUp.textColor = UIColor.black
         healthData.textColor = UIColor.black
         newCheckup.setTitleColor(UIColor.systemBlue, for: .normal)
