@@ -48,8 +48,8 @@ class SettingViewController: UIViewController {
     }
     
     func setWhite(){
-        //view.backgroundColor = UIColor.white
-        view.backgroundColor = UIColor(red:0.83243005454134777, green:1, blue:1, alpha:0.90000000000000002)
+        createGradientLayer()
+        //view.backgroundColor = UIColor(red:0.83243005454134777, green:1, blue:1, alpha:0.90000000000000002)
         label.textColor = UIColor.black
         LabelReceive.textColor = UIColor.black
         VersionNum.textColor = UIColor.black
@@ -59,8 +59,9 @@ class SettingViewController: UIViewController {
     }
     
     func setBlack(){
-        view.backgroundColor = UIColor.darkGray
-        //view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
+        //view.backgroundColor = UIColor.darkGray
+        view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
+        //view.layer.backgroundColor = UIColor.darkGray.cgColor
         label.textColor = UIColor.white
         LabelReceive.textColor = UIColor.white
         versionNumber.textColor = UIColor.white
@@ -198,6 +199,26 @@ class SettingViewController: UIViewController {
         center.add(request) { (error) in
             //check the error parameter and handle any error
         }
+    }
+    var gradientLayer: CAGradientLayer!
+// for gradient color
+    func createGradientLayer() {
+//        gradientLayer = CAGradientLayer()
+     
+        //gradientLayer.frame = self.view.bounds
+//        gradientLayer.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor]
+//        gradientLayer.locations = [0.0, 1.0]
+//        gradientLayer.frame = self.view.bounds
+//        self.view.layer.addSublayer(gradientLayer)
+        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+            let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
+                        
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = [colorTop, colorBottom]
+            gradientLayer.locations = [0.0, 1.0]
+            gradientLayer.frame = view.bounds
+                    
+            view.layer.insertSublayer(gradientLayer, at:0)
     }
     
     
