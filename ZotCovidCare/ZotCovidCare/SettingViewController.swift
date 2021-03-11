@@ -60,7 +60,8 @@ class SettingViewController: UIViewController {
     
     func setBlack(){
         //view.backgroundColor = UIColor.darkGray
-        view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
+        //view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
+        createGradientLayer_dark()
         //view.layer.backgroundColor = UIColor.darkGray.cgColor
         label.textColor = UIColor.white
         LabelReceive.textColor = UIColor.white
@@ -182,8 +183,8 @@ class SettingViewController: UIViewController {
     
     func actionNotify(){
         //step 1: ask for permission
-//        center.requestAuthorization(options: [.alert,.sound]) { (true, error) in
-//        }
+        center.requestAuthorization(options: [.alert,.sound]) { (true, error) in
+        }
         //step 2: create the notification content
         let content = UNMutableNotificationContent()
         content.title = "Daily reminder"
@@ -200,7 +201,8 @@ class SettingViewController: UIViewController {
             //check the error parameter and handle any error
         }
     }
-    var gradientLayer: CAGradientLayer!
+    //var gradientLayer: CAGradientLayer!
+    let gradientLayer = CAGradientLayer()
 // for gradient color
     func createGradientLayer() {
 //        gradientLayer = CAGradientLayer()
@@ -213,16 +215,25 @@ class SettingViewController: UIViewController {
         let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
             let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
                         
-            let gradientLayer = CAGradientLayer()
+            //let gradientLayer = CAGradientLayer()
             gradientLayer.colors = [colorTop, colorBottom]
-            gradientLayer.locations = [0.0, 1.0]
+            //gradientLayer.locations = [0.0, 1.0]
             gradientLayer.frame = view.bounds
                     
             view.layer.insertSublayer(gradientLayer, at:0)
     }
     
     
-   
+    func createGradientLayer_dark() {
+
+            //let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = [UIColor.darkGray.cgColor]
+            print("这tm什么鬼")
+            //gradientLayer.locations = [0.0, 1.0]
+            gradientLayer.frame = view.bounds
+                    
+            view.layer.insertSublayer(gradientLayer, at:0)
+    }
     
 
     /*
