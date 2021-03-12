@@ -116,11 +116,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-2z-WTL">
-                                                <rect key="frame" x="224" y="722.5" width="85" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="View More"/>
-                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VvI-vx-3Vm">
                                                 <rect key="frame" x="57" y="810" width="300" height="476"/>
                                                 <subviews>
@@ -164,13 +159,16 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-2z-WTL">
+                                                <rect key="frame" x="286" y="722.5" width="85" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="View More"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.5" green="0.71397772293849049" blue="0.75263522360999191" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uY4-2z-WTL" secondAttribute="trailing" constant="20" symbolic="YES" id="5kP-Up-Ufn"/>
-                                            <constraint firstItem="uY4-2z-WTL" firstAttribute="centerY" secondItem="bvJ-Y5-Pui" secondAttribute="centerY" id="9oe-Fz-iLU"/>
+                                            <constraint firstItem="uY4-2z-WTL" firstAttribute="leading" secondItem="bvJ-Y5-Pui" secondAttribute="trailing" constant="70" id="0nc-cq-0nf"/>
                                             <constraint firstItem="ABg-jF-YO5" firstAttribute="centerX" secondItem="3BJ-ec-0r3" secondAttribute="centerX" id="Fkq-0i-CV9"/>
-                                            <constraint firstItem="uY4-2z-WTL" firstAttribute="leading" secondItem="bvJ-Y5-Pui" secondAttribute="trailing" symbolic="YES" id="M2o-J9-6wJ"/>
                                             <constraint firstItem="ABg-jF-YO5" firstAttribute="leading" secondItem="3BJ-ec-0r3" secondAttribute="leading" constant="55" id="NDY-OB-WZ8"/>
                                             <constraint firstItem="VvI-vx-3Vm" firstAttribute="centerX" secondItem="ABg-jF-YO5" secondAttribute="centerX" id="OMB-Y7-gcp"/>
                                             <constraint firstAttribute="bottom" secondItem="bvJ-Y5-Pui" secondAttribute="bottom" constant="640" id="OU2-Ik-p3p"/>
@@ -179,6 +177,7 @@
                                             <constraint firstItem="bvJ-Y5-Pui" firstAttribute="top" secondItem="ABg-jF-YO5" secondAttribute="bottom" constant="40" id="VH9-P1-kTK"/>
                                             <constraint firstItem="ABg-jF-YO5" firstAttribute="top" secondItem="uxY-xI-s4g" secondAttribute="bottom" constant="20" id="VJL-o0-zbl"/>
                                             <constraint firstItem="bvJ-Y5-Pui" firstAttribute="leading" secondItem="uxY-xI-s4g" secondAttribute="leading" id="Ynd-av-a07"/>
+                                            <constraint firstItem="uY4-2z-WTL" firstAttribute="centerY" secondItem="bvJ-Y5-Pui" secondAttribute="centerY" id="Ysq-Z7-z5n"/>
                                             <constraint firstAttribute="height" constant="1400" id="c4n-dl-iQJ"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uxY-xI-s4g" secondAttribute="trailing" constant="20" symbolic="YES" id="gM1-TQ-9Gx"/>
                                             <constraint firstItem="uxY-xI-s4g" firstAttribute="top" secondItem="3BJ-ec-0r3" secondAttribute="top" constant="30" id="ufe-oH-5AK"/>
