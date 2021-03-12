@@ -15,6 +15,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
     
     @IBOutlet weak var mapLabel: UILabel!
     @IBOutlet var mapView:MKMapView!
+    @IBOutlet weak var UCImap: UILabel!
+    @IBOutlet weak var CovidTest: UILabel!
     let loc_manager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -52,13 +54,18 @@ class MapViewController: UIViewController,CLLocationManagerDelegate {
     func setBlack()
     {
         view.backgroundColor = UIColor.darkGray
+        mapLabel.textColor = UIColor.white
+        UCImap.textColor = UIColor.white
+        CovidTest.textColor = UIColor.white
         //mapLabel.textColor = UIColor.white
     }
     
     func setWhite()
     {
         view.backgroundColor = UIColor(red:0.78834066585618623, green:1, blue:1, alpha: 0.90000000000000002)
-        //mapLabel.textColor = UIColor.black
+        mapLabel.textColor = UIColor.black
+        UCImap.textColor = UIColor.black
+        CovidTest.textColor = UIColor.black
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -439,6 +439,8 @@
                     <navigationItem key="navigationItem" title="Covid Map" id="6Am-xC-EaJ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="CovidTest" destination="dWi-u4-sOd" id="E1c-5N-ff9"/>
+                        <outlet property="UCImap" destination="pP9-PO-eSw" id="Wyu-Mj-3V6"/>
                         <outlet property="mapLabel" destination="RHP-pc-UGE" id="zBV-8z-jRs"/>
                         <outlet property="mapView" destination="ZRm-JV-jnc" id="8NU-a4-36w"/>
                     </connections>
