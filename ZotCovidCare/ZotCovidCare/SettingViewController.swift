@@ -48,7 +48,6 @@ class SettingViewController: UIViewController {
     }
     
     func setWhite(){
-        //view.backgroundColor = UIColor.white
         view.backgroundColor = UIColor(red:0.83243005454134777, green:1, blue:1, alpha:0.90000000000000002)
         label.textColor = UIColor.black
         LabelReceive.textColor = UIColor.black
@@ -60,7 +59,6 @@ class SettingViewController: UIViewController {
     
     func setBlack(){
         view.backgroundColor = UIColor.darkGray
-        //view.backgroundColor = UIColor(red:0.5, green:0.71397772293849049, blue:0.75263522360999191, alpha:1.0)
         label.textColor = UIColor.white
         LabelReceive.textColor = UIColor.white
         versionNumber.textColor = UIColor.white
@@ -199,11 +197,7 @@ class SettingViewController: UIViewController {
             //check the error parameter and handle any error
         }
     }
-    
-    
    
-    
-
     /*
     // MARK: - Navigation
 
